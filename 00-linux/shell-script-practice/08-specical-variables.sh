@@ -6,8 +6,8 @@ echo "shell file: $0"
 echo "current working directory $PWD"
 echo "Home directory $HOME"
 echo "username: $USER"
-echo "PID: $PID"
+echo "PID: $$"
 sleep 20 &
 
-echo "PID: $PID"
+echo "PID: $$"
 
