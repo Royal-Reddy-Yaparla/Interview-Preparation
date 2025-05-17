@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE=$(data)
+DATE=$(date)
 
 echo "Today is : $DATE"
 
