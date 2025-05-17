@@ -7,7 +7,7 @@ echo "current working directory $PWD"
 echo "Home directory $HOME"
 echo "username: $USER"
 echo "PID: $$"
-sleep 20 &
+sleep 20 & # to run in background
 
-echo "PID: $!" # for hidden process id
+echo "PID: $!" # to get hidden process id
 
