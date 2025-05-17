@@ -17,3 +17,4 @@ read SECONDNUMBER
 ADD=$((FIRSTNUMBER+SECONDNUMBER))
 
 
+echo "Addition: $ADD"
