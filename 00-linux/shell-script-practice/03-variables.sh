@@ -2,7 +2,7 @@
 PLAYER=Kohil
 BOARD=BCCI
 
-echo "$PLAYER: Hello! Board"
+echo "$PLAYER: Hello! $BOARD"
 echo "$BOARD: Hi! nice to meet $PLAYER"
 echo "$BOARD: how is going IPL, I think your fitness is good"
 echo "$PLAYER: Yeah , I want to say , going to retirement from test format" 
