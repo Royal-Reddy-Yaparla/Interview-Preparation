@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER=$(id)
+USER_ID=$(id)
 
 
 # VALIDATE(){
@@ -13,13 +13,13 @@ USER=$(id)
 # }
 
 
-if [ $USER -ne 0 ]
+if [ $USER_ID -ne 0 ]
 then
-    echo "need to provide sudo user access"
+    echo "ERROR: need to provide sudo user access"
     exit 1
 fi
 
-dnf module list mysql
+dnf list installed mysql
 
 if [ $? -eq 0 ]
 then 
