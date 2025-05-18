@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER_ID=$(id)
+USER_ID=$(id -u)
 
 
 # VALIDATE(){
