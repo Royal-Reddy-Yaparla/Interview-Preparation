@@ -13,20 +13,23 @@ USER=$(id)
 # }
 
 
-if [ $USER -ne 0 ]; then
+if [ $USER -ne 0 ]
+then
     echo "need to provide sudo user access"
     exit 1
 fi
 
 dnf module list mysql
 
-if [ $? -eq 0 ]; then 
+if [ $? -eq 0 ]
+then 
     echo "mysql is already installed"
     exit 1
 else
     echo "mysql is not installed , going to install"
     dnf install mysql-server -y
-    if [ $? -eq 0 ] ; then
+    if [ $? -eq 0 ]
+    then
         echo "MySql is installed Successfully"
     else
         echo "ERROR: MySql installation is Failed"
