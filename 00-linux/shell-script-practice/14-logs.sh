@@ -10,17 +10,18 @@ N="\e[0m"
 USER_ID=$(id -u)
 LOG_REPO="/var/log/package-install-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE="$LOG_REPO/$SCRIPT_NAME.log"
+ACCESS_LOG_FILE="$LOG_REPO/access_$SCRIPT_NAME.log"
+ERROR_LOG_FILE="$LOG_REPO/error_$SCRIPT_NAME.log"
 echo "$LOG_FILE"
 
 
 mkdir -p "$LOG_REPO"
 
-# if [ $USER_ID -ne 0 ]
-# then
-#     echo -e "$R ERROR: need to provide sudo user access $N"
-#     exit 1
-# fi
+if [ $USER_ID -ne 0 ]
+then
+    echo -e "$R ERROR: need to provide sudo user access $N 2>$ERROR_LOG_FILE"
+    exit 1
+fi
 
 # # mysql install
 # dnf list installed mysql 
