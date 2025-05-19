@@ -22,7 +22,6 @@ dnf list installed mysql
 if [ $? -eq 0 ]
 then 
     echo -e "$YELLOW INFO: mysql is already installed $NOCOLOR"
-    exit 1
 else
     echo -e "$YELLOW INFO: mysql is not installed , going to install $NOCOLOR"
     dnf install mysql-server -y
@@ -41,16 +40,15 @@ dnf list installed python3
 
 if [ $? -eq 0 ]
 then 
-    echo "$YELLOW INFO: python3 is already installed $NOCOLOR"
-    exit 1
+    echo -e "$YELLOW INFO: python3 is already installed $NOCOLOR"
 else
-    echo "$YELLOW INFO: python3 is not installed , going to install $NOCOLOR"
+    echo -e "$YELLOW INFO: python3 is not installed , going to install $NOCOLOR"
     dnf install python3 -y
     if [ $? -eq 0 ]
     then
-        echo "INFO: python3 is installed $GREEN Successfully $NOCOLOR"
+        echo -e "$YELLOW INFO: python3 is installed $GREEN Successfully $NOCOLOR"
     else
-        echo "$RED ERROR: python3 installation is Failed $NOCOLOR"
+        echo -e "$RED ERROR: python3 installation is Failed $NOCOLOR"
         exit 1
     fi
 fi    
@@ -61,16 +59,15 @@ dnf list installed nginx
 
 if [ $? -eq 0 ]
 then 
-    echo "$YELLOW INFO: nginx is already installed $NOCOLOR"
-    exit 1
+    echo -e "$YELLOW INFO: nginx is already installed $NOCOLOR"
 else
-    echo "$YELLOW INFO: nginx is not installed , going to install $NOCOLOR"
+    echo -e "$YELLOW INFO: nginx is not installed , going to install $NOCOLOR"
     dnf install nginx -y
     if [ $? -eq 0 ]
     then
-        echo "$YELLOW INFO: nginx is installed $GREEN Successfully $NOCOLOR"
+        echo -e "$YELLOW INFO: nginx is installed $GREEN Successfully $NOCOLOR"
     else
-        echo "$RED ERROR: nginx installation is Failed $NOCOLOR"
+        echo -e "$RED ERROR: nginx installation is Failed $NOCOLOR"
         exit 1
     fi
 fi    
