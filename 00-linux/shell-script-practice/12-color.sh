@@ -1,18 +1,27 @@
 #!/bin/bash
 
-echo -e "\e[31m I am RED Color"
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+BLUE="\e[34m"
+MAGNETA="\e[35m"
+CYAN="\e[36m"
+WHITE="\e[37m"
+NOCOLOR="\e[0m"
 
-echo -e "\e[32m I am GREEN Color"
+echo -e "$RED I am RED Color $NOCOLOR"
 
-echo -e "\e[33m I am YELLOW Color"
+echo -e "$GREEN I am GREEN Color $NOCOLOR"
 
-echo -e "\e[34m I am BLUE Color"
+echo -e "$YELLOW I am YELLOW Color $NOCOLOR"
 
-echo -e "\e[35m I am MAGNETA Color"
+echo -e "$BLUE I am BLUE Color $NOCOLOR"
 
-echo -e "\e[36m I am CYAN Color"
+echo -e "$MAGNETA I am MAGNETA Color $NOCOLOR"
 
-echo -e "\e[37m I am WHITE Color"
+echo -e "$CYAN I am CYAN Color $NOCOLOR"
 
-echo -e "\e[0m I am NO Color"
+echo -e "$WHITE I am WHITE Color $NOCOLOR"
+
+echo -e "$NOCOLOR I am NO Color $NOCOLOR"
 
