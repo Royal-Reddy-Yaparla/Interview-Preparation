@@ -24,23 +24,6 @@ then
 fi
 
 
-# # mysql install
-# dnf list installed mysql 1>>$ACCESS_LOG_FILE
-
-# if [ $? -eq 0 ]
-# then 
-#     echo -e "$Y INFO: mysql is already installed $N" 1>>$ACCESS_LOG_FILE
-# else
-#     echo -e "$Y INFO: mysql is not installed , going to install $N" 1>>$ACCESS_LOG_FILE
-#     dnf install mysql -y 1>>$ACCESS_LOG_FILE
-#     if [ $? -eq 0 ]
-#     then
-#         echo -e "INFO: MySql is installed $G Successfully $N" 1>>$ACCESS_LOG_FILE
-#     else
-#         echo -e "$R ERROR: MySql installation is Failed $N" 2>>$ERROR_LOG_FILE
-#         exit 1 
-#     fi
-# fi    
 
 INSTALL(){
     dnf list installed $1 1>>$ACCESS_LOG_FILE
@@ -64,40 +47,6 @@ INSTALL(){
 
 INSTALL "mysql"
 
+INSTALL "python3"
 
-# # python3 install
-# dnf list installed python3
-
-# if [ $? -eq 0 ]
-# then 
-#     echo -e "$Y INFO: python3 is already installed $N"
-# else
-#     echo -e "$Y INFO: python3 is not installed , going to install $N"
-#     dnf install python3 -y
-#     if [ $? -eq 0 ]
-#     then
-#         echo -e "$Y INFO: python3 is installed $G Successfully $N"
-#     else
-#         echo -e "$R ERROR: python3 installation is Failed $N"
-#         exit 1
-#     fi
-# fi    
-
-
-# # nginx install
-# dnf list installed nginx
-
-# if [ $? -eq 0 ]
-# then 
-#     echo -e "$Y INFO: nginx is already installed $N"
-# else
-#     echo -e "$Y INFO: nginx is not installed , going to install $N"
-#     dnf install nginx -y
-#     if [ $? -eq 0 ]
-#     then
-#         echo -e "$Y INFO: nginx is installed $G Successfully $N"
-#     else
-#         echo -e "$R ERROR: nginx installation is Failed $N"
-#         exit 1
-#     fi
-# fi    
+INSTALL "nginx"
