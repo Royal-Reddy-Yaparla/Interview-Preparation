@@ -11,8 +11,10 @@ USER_ID=$(id -u)
 LOG_REPO="/var/log/package-install-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$SCRIPT_NAME.log"
-
 echo "$LOG_FILE"
+
+
+mkdir -p "$LOG_REPO"
 
 # if [ $USER_ID -ne 0 ]
 # then
