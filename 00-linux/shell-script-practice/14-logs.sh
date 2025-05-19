@@ -62,7 +62,7 @@ INSTALL(){
 }
 
 
-INSTALL() "mysql"
+INSTALL "mysql"
 
 
 # # python3 install
