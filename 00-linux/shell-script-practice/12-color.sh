@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo -e "\[31m I am RED Color"
+echo -e "\e[31m I am RED Color"
