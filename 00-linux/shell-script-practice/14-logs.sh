@@ -23,23 +23,46 @@ then
     exit 1
 fi
 
-# mysql install
-dnf list installed mysql 1>>$ACCESS_LOG_FILE
 
-if [ $? -eq 0 ]
-then 
-    echo -e "$Y INFO: mysql is already installed $N" 1>>$ACCESS_LOG_FILE
-else
-    echo -e "$Y INFO: mysql is not installed , going to install $N" 1>>$ACCESS_LOG_FILE
-    dnf install mysql-server -y 1>>$ACCESS_LOG_FILE
+# # mysql install
+# dnf list installed mysql 1>>$ACCESS_LOG_FILE
+
+# if [ $? -eq 0 ]
+# then 
+#     echo -e "$Y INFO: mysql is already installed $N" 1>>$ACCESS_LOG_FILE
+# else
+#     echo -e "$Y INFO: mysql is not installed , going to install $N" 1>>$ACCESS_LOG_FILE
+#     dnf install mysql -y 1>>$ACCESS_LOG_FILE
+#     if [ $? -eq 0 ]
+#     then
+#         echo -e "INFO: MySql is installed $G Successfully $N" 1>>$ACCESS_LOG_FILE
+#     else
+#         echo -e "$R ERROR: MySql installation is Failed $N" 2>>$ERROR_LOG_FILE
+#         exit 1 
+#     fi
+# fi    
+
+INSTALL(){
+    dnf list installed $1 1>>$ACCESS_LOG_FILE
+
     if [ $? -eq 0 ]
-    then
-        echo -e "INFO: MySql is installed $G Successfully $N" 1>>$ACCESS_LOG_FILE
+    then 
+        echo -e "$Y INFO: $1 is already installed $N" 1>>$ACCESS_LOG_FILE
     else
-        echo -e "$R ERROR: MySql installation is Failed $N" 2>>$ERROR_LOG_FILE
-        exit 1 
-    fi
-fi    
+        echo -e "$Y INFO: $1 is not installed , going to install $N" 1>>$ACCESS_LOG_FILE
+        dnf install $1 -y 1>>$ACCESS_LOG_FILE
+        if [ $? -eq 0 ]
+        then
+            echo -e "INFO: $1 is installed $G Successfully $N" 1>>$ACCESS_LOG_FILE
+        else
+            echo -e "$R ERROR: $1 installation is Failed $N" 2>>$ERROR_LOG_FILE
+            exit 1 
+        fi
+    fi    
+}
+
+
+INSTALL() mysql
 
 
 # # python3 install
