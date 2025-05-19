@@ -12,7 +12,7 @@ USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]
 then
-    echo "$RED ERROR: need to provide sudo user access $NOCOLOR"
+    echo -e "$RED ERROR: need to provide sudo user access $NOCOLOR"
     exit 1
 fi
 
@@ -21,16 +21,16 @@ dnf list installed mysql
 
 if [ $? -eq 0 ]
 then 
-    echo "$YELLOW INFO: mysql is already installed $NOCOLOR"
+    echo -e "$YELLOW INFO: mysql is already installed $NOCOLOR"
     exit 1
 else
-    echo "$YELLOW INFO: mysql is not installed , going to install $NOCOLOR"
+    echo -e "$YELLOW INFO: mysql is not installed , going to install $NOCOLOR"
     dnf install mysql-server -y
     if [ $? -eq 0 ]
     then
-        echo "INFO: MySql is installed $GREEN Successfully $NOCOLOR"
+        echo -e "INFO: MySql is installed $GREEN Successfully $NOCOLOR"
     else
-        echo "$RED ERROR: MySql installation is Failed $NOCOLOR"
+        echo -e "$RED ERROR: MySql installation is Failed $NOCOLOR"
         exit 1
     fi
 fi    
