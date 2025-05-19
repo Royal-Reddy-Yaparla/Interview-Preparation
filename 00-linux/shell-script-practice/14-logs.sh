@@ -19,27 +19,27 @@ mkdir -p "$LOG_REPO"
 
 if [ $USER_ID -ne 0 ]
 then
-    echo -e "$R ERROR: need to provide sudo user access $N" 2>>$ERROR_LOG_FILE
+    echo -e "$R ERROR: need to provide sudo user access $N"
     exit 1
 fi
 
-# # mysql install
-# dnf list installed mysql 
+# mysql install
+dnf list installed mysql 1>>$ACCESS_LOG_FILE
 
-# if [ $? -eq 0 ]
-# then 
-#     echo -e "$Y INFO: mysql is already installed $N"
-# else
-#     echo -e "$Y INFO: mysql is not installed , going to install $N"
-#     dnf install mysql-server -y
-#     if [ $? -eq 0 ]
-#     then
-#         echo -e "INFO: MySql is installed $G Successfully $N"
-#     else
-#         echo -e "$R ERROR: MySql installation is Failed $N"
-#         exit 1
-#     fi
-# fi    
+if [ $? -eq 0 ]
+then 
+    echo -e "$Y INFO: mysql is already installed $N" 1>>$ACCESS_LOG_FILE
+else
+    echo -e "$Y INFO: mysql is not installed , going to install $N" 1>>$ACCESS_LOG_FILE
+    dnf install mysql-server -y 1>>$ACCESS_LOG_FILE
+    if [ $? -eq 0 ]
+    then
+        echo -e "INFO: MySql is installed $G Successfully $N" 1>>$ACCESS_LOG_FILE
+    else
+        echo -e "$R ERROR: MySql installation is Failed $N" 2>>$ERROR_LOG_FILE
+        exit 1 
+    fi
+fi    
 
 
 # # python3 install
