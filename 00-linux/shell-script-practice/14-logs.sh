@@ -19,7 +19,7 @@ mkdir -p "$LOG_REPO"
 
 if [ $USER_ID -ne 0 ]
 then
-    echo -e "$R ERROR: need to provide sudo user access $N" 2>> $ERROR_LOG_FILE
+    echo -e "$R ERROR: need to provide sudo user access $N" 2>>$ERROR_LOG_FILE
     exit 1
 fi
 
