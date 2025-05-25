@@ -5,8 +5,8 @@ WISH="Hello  Good morning"
 echo "$WISH"
 echo "process-id:: $$"
 
-# ./18-testing-script.sh
-source ./18-testing-script.sh
+./18-testing-script.sh
+# source ./18-testing-script.sh
  
 # differentiation between ./18-testing-script.sh and source ./18-testing-script.sh
 # Runs as  new, separate shell.(differenct process id)
