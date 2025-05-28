@@ -1,0 +1,35 @@
+- name: prompt variables 
+  hosts: local
+  connection: local
+  vars_prompt:
+    - name: name_of_employee
+      prompt: What is employee name?
+      private: false
+
+    - name: employee_location
+      prompt: Where is employee from?
+      private: false
+
+    - name: role_of_employee
+      prompt: What is employee role?
+      private: false 
+  tasks:
+  ansible.builtin.debug:
+    msg: 'I am {{ NAME }} , From {{ LOCATION }}, Working as {{ ROLE }}'
+
+- name: employee_credentials
+  hosts: local
+  connection: local
+  vars_prompt:
+    - name: username
+      prompt: Enter username 
+      private: false 
+
+    - name: password
+      prompt: Enter password
+      # The user input is hidden by default but it can be made visible by setting private: false
+      
+  tasks:
+  ansible.builtin.debug:
+    msg: 'username: {{ username }} ; password: {{ password }}'
+
