@@ -1,5 +1,6 @@
 - name: print the word
   hosts: local
+  connection: local # need not to mentsion username and password
   tasks:
   - name: Print the gateway for each host when defined
     ansible.builtin.debug:
