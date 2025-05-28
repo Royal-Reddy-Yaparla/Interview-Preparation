@@ -1,0 +1,15 @@
+- name: task and play level variables
+  hosts: local
+  connection: local
+  vars_prompt:
+    - name: NAME
+      prompt: Enter name?
+      private: false
+  vars:
+    NAME: from-play-level
+  tasks: 
+  - name: about employee
+    vars: 
+      NAME: from-task-level
+    ansible.builtin.debug:
+      msg: 'I am {{ NAME }} , From {{ LOCATION }}, Working as {{ ROLE }}'

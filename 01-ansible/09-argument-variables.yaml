@@ -5,3 +5,6 @@
   - name: about a employee
     ansible.builtin.debug:
       msg: 'I am {{ NAME }} , From {{ LOCATION }}, Working as {{ ROLE }}'
+
+
+# ansible-playbook -i inverntory.ini 09-argument-variables.yaml --extra-vars "NAME=Royal ROLE=SRE LOCATION=Hyd"
