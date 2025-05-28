@@ -1,0 +1,7 @@
+- name: variables practice
+  hosts: local
+  connection: local
+  tasks:
+  - name: about a employee
+    ansible.builtin.debug:
+      msg: 'I am {{ NAME }} , From {{ LOCATION }}, Working as {{ ROLE }}'
