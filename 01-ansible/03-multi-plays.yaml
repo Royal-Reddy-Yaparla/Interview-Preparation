@@ -1,0 +1,16 @@
+- name: play-1 
+  hosts: local
+  connection: local # no require to username and password
+  tasks: 
+  - name: hello with task-1 from play-1 
+    ansible.buildin.debug: 
+      msg: "Hello with task-1 from play-1"
+
+
+- name: play-2
+  hosts: local
+  connection: local
+  tasks:
+  - name: hello with task-2 from play-2 
+    ansible.buildin.debug: 
+      msg: "Hello with task-2 from play-2"
