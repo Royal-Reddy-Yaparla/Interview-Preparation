@@ -15,4 +15,4 @@
   tasks:
   - name: about a employee
     ansible.builtin.debug:
-      msg: 'I am {{ NAME }} , ID {{ ID }}, am I Certified  {{ CERTIFIED }} skills {{ SKILLS[2] }} , IaC-Tool-{{ TOOLS[IaC] }}'
+      msg: "I am {{ NAME }} , ID {{ ID }}, am I Certified  {{ CERTIFIED }} skills {{ SKILLS[2] }} , IaC-Tool-{{ TOOLS[ 'IaC' ] }}"
