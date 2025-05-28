@@ -1,8 +1,8 @@
 - name: task and play level variables
   hosts: local
   connection: local
-  vars_files:
-    info.yaml
+  # vars_files:
+  #   info.yaml
   vars_prompt:
     - name: NAME
       prompt: Enter name?
@@ -19,3 +19,4 @@
 # precedence
 # - argument-level
 # - task-level
+# - var-file 
