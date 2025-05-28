@@ -1,7 +1,7 @@
 - name: variables practice
   hosts: local
   connection: local
-  var:
+  vars:
     NAME: Royal Reddy 
     ROLE: DevOps Engineer
     LOCATION: HYDERABAD
