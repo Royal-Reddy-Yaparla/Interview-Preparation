@@ -15,7 +15,7 @@
       private: false 
   tasks:
   - ansible.builtin.debug:
-      msg: 'I am {{ NAME }} , From {{ LOCATION }}, Working as {{ ROLE }}'
+      msg: 'I am {{ name_of_employee }} , From {{ employee_location }}, Working as {{ role_of_employee }}'
 
 - name: employee_credentials
   hosts: local
