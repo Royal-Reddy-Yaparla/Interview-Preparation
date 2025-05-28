@@ -14,8 +14,8 @@
       prompt: What is employee role?
       private: false 
   tasks:
-  ansible.builtin.debug:
-    msg: 'I am {{ NAME }} , From {{ LOCATION }}, Working as {{ ROLE }}'
+  - ansible.builtin.debug:
+      msg: 'I am {{ NAME }} , From {{ LOCATION }}, Working as {{ ROLE }}'
 
 - name: employee_credentials
   hosts: local
@@ -30,6 +30,6 @@
       # The user input is hidden by default but it can be made visible by setting private: false
       
   tasks:
-  ansible.builtin.debug:
-    msg: 'username: {{ username }} ; password: {{ password }}'
+  - ansible.builtin.debug:
+      msg: 'username: {{ username }} ; password: {{ password }}'
 
