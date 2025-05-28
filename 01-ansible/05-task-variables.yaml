@@ -1,0 +1,13 @@
+- name: task and play level variables
+  hosts: local
+  connection: local
+  vars:
+    NAME: Royal Reddy
+    ROLE: DevOps Engineer
+    LOCATION: Hyderabad
+  tasks: 
+  - name: about employee
+    vars: 
+      ROLE: SRE
+    ansible.builtin.debug:
+      msg: 'I am {{ NAME }} , From {{ LOCATION }}, Working as {{ ROLE }}'
