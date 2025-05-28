@@ -8,5 +8,5 @@
 - name: check node-2 host by ping 
   hosts: second-node
   tasks:
-    name: Example from an Ansible Playbook
-    ansible.builtin.ping:
+  - name: Example from an Ansible Playbook
+    ansible.builtin.ping:  
