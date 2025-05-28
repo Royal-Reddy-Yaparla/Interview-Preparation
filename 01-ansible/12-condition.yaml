@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    NUMBER : -12
+    NUMBER : 0
   tasks:
   - name: print number input
     ansible.builtin.debug:
