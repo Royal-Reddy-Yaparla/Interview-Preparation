@@ -1,0 +1,9 @@
+- name: practice variables 
+  hosts: local
+  connection: local
+  var_file:
+    info.yaml
+  tasks:
+  - name: variables from file 
+    ansible.builtin.debug:
+      msg: 'I am {{ NAME }} , From {{ LOCATION }}, Working as {{ ROLE }}'
