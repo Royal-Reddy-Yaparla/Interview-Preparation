@@ -1,0 +1,20 @@
+- name: variables practice
+  hosts: local
+  connection: local
+  vars:
+    NUMBER : 12
+  tasks:
+  - name: print number input
+    ansible.builtin.debug:
+      msg: 'number is positive'
+    when: NUMBER > 0
+
+  - name: print number input
+    ansible.builtin.debug:
+      msg: 'number is negative'
+    when: NUMBER < 0
+
+  - name: print number input
+    ansible.builtin.debug:
+      msg: 'number is equal t= zero'
+    when: NUMBER == 0
