@@ -3,10 +3,10 @@
   connection: local
   # vars_files:
   #   info.yaml
-  vars_prompt:
-    - name: NAME
-      prompt: Enter name?
-      private: false
+  # vars_prompt:
+  #   - name: NAME
+  #     prompt: Enter name?
+  #     private: false
   vars:
     NAME: from-play-level
   tasks: 
@@ -20,3 +20,4 @@
 # - argument-level
 # - task-level
 # - var-file 
+# - prompt-level
