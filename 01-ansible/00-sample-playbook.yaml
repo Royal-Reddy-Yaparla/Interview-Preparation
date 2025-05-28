@@ -1,0 +1,5 @@
+- name: check remote host by ping # 
+  host: first-node # remote server info
+  task:
+  - name: Example from an Ansible Playbook
+    ansible.builtin.ping:
