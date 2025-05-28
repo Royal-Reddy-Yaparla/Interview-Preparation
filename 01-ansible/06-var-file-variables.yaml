@@ -1,7 +1,7 @@
 - name: practice variables 
   hosts: local
   connection: local
-  var_file:
+  vars_files:
     info.yaml
   tasks:
   - name: variables from file 
