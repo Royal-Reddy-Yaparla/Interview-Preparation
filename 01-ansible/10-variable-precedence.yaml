@@ -7,8 +7,8 @@
   #   - name: NAME
   #     prompt: Enter name?
   #     private: false
-  vars:
-    NAME: from-play-level
+  # vars:
+  #   NAME: from-play-level
   tasks: 
   - name: about employee
     # vars: 
@@ -21,3 +21,4 @@
 # - task-level
 # - var-file 
 # - prompt-level
+# - play-level
