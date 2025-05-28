@@ -17,8 +17,9 @@
       msg: 'I am {{ NAME }}'
 
 # precedence
-# - argument-level
-# - task-level
-# - var-file 
-# - prompt-level
-# - play-level
+# 1 - argument-level
+# 2 - task-level
+# 3 - var-file 
+# 4 - prompt-level
+# 5 - play-level
+# 6 - inventory-level
