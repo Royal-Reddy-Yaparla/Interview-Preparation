@@ -11,7 +11,11 @@
     NAME: from-play-level
   tasks: 
   - name: about employee
-    vars: 
-      NAME: from-task-level
+    # vars: 
+    #   NAME: from-task-level
     ansible.builtin.debug:
       msg: 'I am {{ NAME }}'
+
+# precedence
+# - argument-level
+# - task-level
