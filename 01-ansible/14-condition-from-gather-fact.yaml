@@ -1,6 +1,7 @@
 - name: install package based ditribution
   hosts: local
   connection: local
+  become: yes
   tasks:
   - name: install nginx on RedHat based instance
     ansible.builtin.dnf:
