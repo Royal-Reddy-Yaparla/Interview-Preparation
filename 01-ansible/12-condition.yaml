@@ -16,5 +16,5 @@
 
   - name: print number input
     ansible.builtin.debug:
-      msg: 'number is equal t= zero'
+      msg: 'number is equal to zero'
     when: NUMBER == 0
