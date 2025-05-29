@@ -5,4 +5,4 @@
   tasks:
   - name: print gather facts 
     ansible.builtin.debug:
-      msg: '{{ ansible_facts }}'
+      msg: "Operating_System: {{ ansible_facts['os_family']}} Public_IP: {{ ansible_facts['all_ipv4_addresses'] }}"
