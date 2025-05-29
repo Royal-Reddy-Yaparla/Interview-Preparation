@@ -1,7 +1,6 @@
 - name: gather facts of local
   hosts: local
   connection: local
-  # gather_facts: yes
   tasks:
   - name: print gather facts 
     ansible.builtin.debug:
@@ -9,3 +8,4 @@
       - "Operating_System: {{ ansible_facts['os_family']}}"
       - "Public_IP: {{ ansible_facts['all_ipv4_addresses'] }}"
       - "Host Name: {{ ansible_facts['hostname'] }}"
+

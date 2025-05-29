@@ -1,0 +1,15 @@
+- name: install package based ditribution
+  hosts: local
+  connection: local
+  tasks:
+  - name: install nginx on RedHat based instance
+    ansible.builtin.dnf:
+      name: nginx
+      state: installed
+    when: ansible_facts['os_family'] == 'RedHat' 
+  
+  - name: install nginx on Debian based instance
+    ansible.builtin.apt:
+      name: nginx
+      state: installed
+    when: ansible_facts['os_family'] == 'Debian' 
