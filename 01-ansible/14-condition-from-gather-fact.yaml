@@ -4,7 +4,7 @@
   become: yes
   tasks:
   - name: install nginx on RedHat based instance
-    ansible.builtin.dnf:
+    ansible.builtin.dnf: # ansible.builtin.package: for ansible itself take based on linux-distribution
       name: nginx
       state: installed
     when: ansible_facts['os_family'] == 'RedHat' 

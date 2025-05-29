@@ -1,0 +1,13 @@
+- name: loop
+  hosts: local
+  connection: local 
+  tasks: 
+  - name: print loop items
+    ansible.builtin.debug:
+      msg: 'cloud provide {{ item }}'
+    loop:
+      - AWS
+      - Azure
+      - GCP
+      - Alibaba
+      - Digital Ocean
