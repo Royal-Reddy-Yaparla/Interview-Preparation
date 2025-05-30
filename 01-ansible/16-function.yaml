@@ -20,3 +20,12 @@
         CICD: Jenkins
     ansible.builtin.debug:
       msg: "{{ TOOLS | dict2items  }}"
+
+  - name: list into a dictionary 
+    vars:
+      mylist:
+        - { "key": "CLOUD","value": "AWS" }
+        - { "key": "IaC","value": "Terraform" }
+        - {"key": "CICD","value": "Jenkins" }
+    ansible.builtin.debug:
+      msg: "{{ mylist | items2dict  }}"
