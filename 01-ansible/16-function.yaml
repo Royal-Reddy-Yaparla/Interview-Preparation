@@ -9,5 +9,5 @@
   - name: string to list
     vars: 
       persons: "Ramesh,Hitesh,Naresh,Mahesh"
-      ansible.builtin.debug:
-        msg: "{{ persons | split(',') }}"
+    ansible.builtin.debug:
+      msg: "{{ persons | split(',') }}"
