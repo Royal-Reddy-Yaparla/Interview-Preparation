@@ -6,4 +6,8 @@
     ansible.builtin.debug:
       msg: "I am {{ NAME | default('Royal') }}"
     
-  - name: 
+  - name: string to list
+    vars: 
+      persons: "Ramesh,Hitesh,Naresh,Mahesh"
+      ansible.builtin.debug:
+        msg: "{{ persons | split(',') }}"
