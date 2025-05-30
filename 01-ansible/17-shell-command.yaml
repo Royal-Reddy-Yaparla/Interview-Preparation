@@ -1,0 +1,19 @@
+- name: shell practice
+  hosts: local
+  connection: local
+  tasks:  
+  - name: shell module 
+    ansible.builtin.shell: "ls -lrta > result.txt"
+    register: shell_result 
+
+  - name: print outpude from shell 
+    ansible.builtin.debug: 
+      msg: "{{ shell_result }}"
+
+  - name: command module 
+    ansible.builtin.command: "ls -lrta "
+    register: command_result 
+
+  - name: print outpude from command 
+    ansible.builtin.debug: 
+      msg: "{{ command_result }}"
