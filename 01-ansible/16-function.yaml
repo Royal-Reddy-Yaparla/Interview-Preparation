@@ -29,3 +29,9 @@
         - {"key": "CICD","value": "Jenkins" }
     ansible.builtin.debug:
       msg: "{{ mylist | items2dict  }}"
+    
+  - name: validate IP 
+    vars: 
+      IP: 172.34.23.1
+    ansible.builtin.debug:
+      msg: "{{ ip | ansible.utils.ipaddr }}"
