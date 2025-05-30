@@ -11,3 +11,12 @@
       persons: "Ramesh,Hitesh,Naresh,Mahesh"
     ansible.builtin.debug:
       msg: "{{ persons | split(',') }}"
+
+  - name: dictionary into a list 
+    vars:
+      TOOLS: 
+        CLOUD: AWS
+        IaC: Terraform
+        CICD: Jenkins
+    ansible.builtin.debug:
+      msg: "{{ TOOLS | dict2items  }}"
