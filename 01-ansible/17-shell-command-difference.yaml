@@ -6,6 +6,16 @@
   tasks: 
   - name: Run a command with user input
     ansible.builtin.shell: "echo Hello {{ username }}"
+    register: shell_result  
+
+  - name: print output from shell 
+    ansible.builtin.debug: 
+      msg: "{{ shell_result }}"
 
   - name: Run a command with user input
     ansible.builtin.command: "echo Hello {{ username }}"
+    register: command_result 
+
+  - name: print output from command 
+    ansible.builtin.debug: 
+      msg: "{{ command_result }}"
