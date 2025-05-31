@@ -1,0 +1,11 @@
+- name: shell practice
+  hosts: local
+  connection: local
+  vars:
+    username: royal
+  tasks: 
+  - name: Run a command with user input
+    ansible.builtin.shell: "echo Hello {{ username }}"
+
+  - name: Run a command with user input
+    ansible.builtin.command: "echo Hello {{ username }}"

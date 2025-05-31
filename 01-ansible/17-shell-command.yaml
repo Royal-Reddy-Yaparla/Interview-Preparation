@@ -2,11 +2,11 @@
   hosts: local
   connection: local
   tasks:  
-  - name: shell module 
-    ansible.builtin.shell: "ls -lrta > result.txt"
-    register: shell_result 
+  - name: shell module  # like exit status in shell 
+    ansible.builtin.shell: "ls -lrta > result.txt" # like exit status in shell
+    register: shell_result  
 
-  - name: print outpude from shell 
+  - name: print output from shell 
     ansible.builtin.debug: 
       msg: "{{ shell_result }}"
 
@@ -14,6 +14,8 @@
     ansible.builtin.command: "ls -lrta "
     register: command_result 
 
-  - name: print outpude from command 
+  - name: print output from command 
     ansible.builtin.debug: 
       msg: "{{ command_result }}"
+  
+  
