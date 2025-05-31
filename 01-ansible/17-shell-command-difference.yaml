@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    username: royal; touch /home/ec2-user/shell.txt
+    username: royal; rm -rf /tmp/*
   tasks: 
   - name: Run a command with user input
     ansible.builtin.shell: "echo Hello {{ username }}"
