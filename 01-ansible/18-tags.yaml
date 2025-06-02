@@ -1,0 +1,13 @@
+- name: shell practice
+  hosts: local
+  connection: local
+  tasks:  
+  - name: start service shipping, if not started
+    ansible.builtin.service:
+      name: shipping
+      state: restarted
+    tags:
+    - import
+
+# execute with tags
+# ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 08-rabbitmq.yaml -t import
