@@ -1,4 +1,4 @@
-  - name: start nginx service
+  - name: configure nginx
     include_role:
       name: common
       tasks_from: nginx.yaml
