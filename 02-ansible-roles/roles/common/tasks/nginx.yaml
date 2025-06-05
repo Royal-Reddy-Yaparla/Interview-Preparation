@@ -1,10 +1,10 @@
 - name: nginx install
   ansible.builtin.package: 
-    name: "{{ component }}"
+    name: nginx
     state: present
 
 - name: start service , if not started
   ansible.builtin.service:
-    name: "{{ component }}"
+    name: nginx
     state: started
     enabled: true
