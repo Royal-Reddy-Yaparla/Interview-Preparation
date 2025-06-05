@@ -1,10 +1,12 @@
 # - name: nginx install
+  # tags: deployment
 #   import_role:
 #     name: common
 #     tasks_from: nginx.yaml
 
 
 - name: nginx install
+  tags: deployment
   include_role:
     name: common
     tasks_from: nginx.yaml
