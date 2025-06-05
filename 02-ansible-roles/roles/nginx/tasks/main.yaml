@@ -1,9 +1,9 @@
 - name: nginx install
   tags: 
-    - deployment
+  - deployment
   import_role:
     name: common
-    tasks_from: nginx.yaml
+    tasks_from: nginx
 
 
 # - name: nginx install
