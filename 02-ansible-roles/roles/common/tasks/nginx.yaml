@@ -1,9 +1,9 @@
 - name: nginx install
-  ansible.buildin.package: 
+  ansible.builtin.package: 
     name: "{{ component }}"
     state: present
 
-- name: start service "{{ component }}", if not started
+- name: start service , if not started
   ansible.builtin.service:
     name: "{{ component }}"
     state: start
