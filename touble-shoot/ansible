@@ -1,0 +1,22 @@
+- verbose
+    -v 
+    -vv 
+    -vvv
+    -vvvv
+
+- Check mode (dry run) 
+    --check
+
+- difference 
+    --diff
+
+- Start at a specific task
+    --start-at-task="Task Name"
+
+- Check syntax only
+    --syntax-check
+
+- Step through tasks
+    --step: Prompts you before running each task
+
+- 

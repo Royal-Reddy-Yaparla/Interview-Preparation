@@ -1,0 +1,9 @@
+set -x
+
+set -e makes the script stop immediately if any external program returns a non-zero exit status. This is useful if your script attempts to handle all error cases and where a failure to do so should be trapped.
+
+set -x was mentioned above and is certainly the most useful of all the debugging methods.
+
+set -n might also be useful if you want to check your script for syntax errors.
+
+strace is also useful to see what's going on. Especially useful if you haven't written the script yourself.

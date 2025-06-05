@@ -1,0 +1,28 @@
+- wrting playbook with configuration 
+  - choose componets from docs do it 
+
+- wrting ansible-role along with jinja with configuration 
+  - choose componets from docs do it 
+
+- handlers
+
+- tags
+
+- adhoc commands
+
+- valut 
+
+- nohup vs & background
+
+- shell vs command
+
+- modules list used in project 
+
+- variables precedence
+
+- Dynamic inventories vs inventories
+
+- configuration 
+  - master and node
+  - local
+

@@ -1,5 +1,18 @@
 core-modules
+- package
+- copy
+- get_url
+- unarchive
+- debug
+- service
+- systemd_service
+- command
+- shell
+- file
 
 
 community-modules 
-
+- npm 
+- mysql
+- pip 
+- rabbitmq

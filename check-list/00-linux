@@ -1,0 +1,16 @@
+- hardlink and symlink 
+- trouble-shoot
+  - network
+  - cpu
+  - memory 
+  - services 
+
+- VIM editor
+- User management
+
+- Permissions
+- Ownership
+- Sudo access to user
+- Key based authentication
+- Package management
+- Service management

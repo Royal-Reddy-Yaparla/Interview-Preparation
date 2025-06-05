@@ -1,0 +1,4 @@
+  - name: start catalogue service
+    include_role:
+      name: common
+      tasks_from: "{{ component }}.yaml"
