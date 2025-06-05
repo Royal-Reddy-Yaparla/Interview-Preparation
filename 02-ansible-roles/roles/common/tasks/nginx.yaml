@@ -1,15 +1,23 @@
 - name: disable current nginx module 
+  tags: 
+    - deployment
   ansible.builtin.command: "dnf module disable nginx -y"
 
 - name: enable nginx:1.24 module 
+  tags: 
+    - deployment
   ansible.builtin.command: "dnf module enable nginx:1.24 -y"
 
 - name: install nginx 
+  tags: 
+    - deployment
   ansible.builtin.package:
     name: nginx 
     state: present
 
 - name: start nginx 
+  tags: 
+    - deployment
   ansible.builtin.service:
     name: nginx 
     state: start
