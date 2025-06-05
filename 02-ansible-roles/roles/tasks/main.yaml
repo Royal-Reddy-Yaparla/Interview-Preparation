@@ -1,4 +1,4 @@
-  - name: start catalogue service
+  - name: start nginx service
     include_role:
       name: common
-      tasks_from: "{{ component }}.yaml"
+      tasks_from: nginx.yaml
