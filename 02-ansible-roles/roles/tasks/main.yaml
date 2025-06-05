@@ -1,4 +1,9 @@
   - name: start nginx service
-    include_role:
+    import_role:
       name: common
       tasks_from: nginx.yaml
+
+
+    # include_role:
+    #   name: common
+    #   tasks_from: nginx.yaml
