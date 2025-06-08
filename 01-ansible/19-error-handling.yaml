@@ -4,5 +4,14 @@
   tasks:
   - name: check user exist or not
     ansible.builtin.command: id royal
+    register: output
     ignore_errors: true # have aware regarding error , but saying ignore and continue
-    
+
+  - name: if user not exist create user 
+    become: true
+    ansible.builtin.command: useradd royal
+    when: output.rc | int > 0
+  
+  # - name: user already exists
+  #   ansible.builtin.command: useradd royal
+  #   when: output.rc | int < 0
