@@ -1,0 +1,22 @@
+- name: create a directory if it does not exist
+  ansible.builtin.file:
+    path: /app
+    state: directory
+
+- name: add the system user 'roboshop'
+  ansible.builtin.user:
+    name: roboshop
+    system: true # makes the user a system account.
+    home : /app
+    shell: /sbin/nologin
+
+- name: download application code
+  ansible.builtin.get_url:
+    url: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-v3.zip 
+    dest: /tmp/{{ component }}.zip
+  
+- name: extract application code /tmp/{{ component }}.zip
+  ansible.builtin.unarchive:
+    src: /tmp/{{ component }}.zip
+    dest: /app/
+    remote_src: true

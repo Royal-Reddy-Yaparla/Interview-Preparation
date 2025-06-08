@@ -1,0 +1,10 @@
+  - name: disable current redis module 
+    ansible.builtin.command: "dnf module disable redis -y"
+
+  - name: enable redis:7 module 
+    ansible.builtin.command: "dnf module enable redis:7 -y"
+
+  - name: install redis  
+    ansible.builtin.package:
+      name: redis 
+      state: present

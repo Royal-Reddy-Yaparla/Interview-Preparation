@@ -1,0 +1,10 @@
+  - name: disable current nginx module 
+    ansible.builtin.command: "dnf module disable nginx -y"
+
+  - name: enable nginx:1.24 module 
+    ansible.builtin.command: "dnf module enable nginx:1.24 -y"
+
+  - name: install nginx 
+    ansible.builtin.package:
+      name: nginx 
+      state: present
