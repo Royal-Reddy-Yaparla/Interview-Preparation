@@ -1,0 +1,4 @@
+- name: Install mysql server
+  ansible.builtin.package:
+    name: mysql-server
+    state: present

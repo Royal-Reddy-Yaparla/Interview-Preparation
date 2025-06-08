@@ -1,0 +1,13 @@
+- name: install redis 
+  include_role:
+    name: common
+    tasks_from: mysql-setup.yaml
+
+- name: start service mysql, if not started
+  ansible.builtin.service:
+    name: mysqld
+    state: started
+    enabled: true
+  
+- name: set up root root_password
+  ansible.builtin.command: "mysql_secure_installation --set-root-pass {{ MYSQL_ROOT_PASSWORD }}}"
