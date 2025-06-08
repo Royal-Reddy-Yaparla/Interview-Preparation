@@ -1,0 +1,5 @@
+- name: error-handling
+  hosts: local
+  tasks:
+  - name: check user exist or not
+    ansible.builtin.command: id royal
