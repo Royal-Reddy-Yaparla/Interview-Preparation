@@ -20,3 +20,7 @@
     ansible.builtin.debug:
       msg: "user already exist"
     when: output.rc | int == 0
+
+# other usecases
+# - File Existence Check and Copy
+# - Service Status Check and Restart 
