@@ -1,5 +1,5 @@
 - name: local configuration
-  host: local
+  hosts: local
   connection: local
   become: true 
   tasks:
