@@ -1,0 +1,12 @@
+- name: local configuration
+  host: local
+  connection: local
+  become: true 
+  tasks:
+  - name: install python botocore and boto3
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      executable: pip3.9
+    loop:
+    - botocore
+    - boto3
