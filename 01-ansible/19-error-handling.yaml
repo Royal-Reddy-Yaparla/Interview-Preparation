@@ -4,3 +4,5 @@
   tasks:
   - name: check user exist or not
     ansible.builtin.command: id royal
+    ignore_errors: true # have aware regarding error , but saying ignore and continue
+    
