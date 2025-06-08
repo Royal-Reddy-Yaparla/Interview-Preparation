@@ -7,6 +7,9 @@
     register: output
     ignore_errors: true # have aware regarding error , but saying ignore and continue
 
+  - name: print output 
+    ansible.builtin.debug: output
+    
   - name: if user not exist create user 
     become: true
     ansible.builtin.command: useradd royal
