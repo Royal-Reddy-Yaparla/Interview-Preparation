@@ -2,6 +2,6 @@
   hosts: "{{ component }}"
   become: true
   vars_files:
-    roles/vaults/myql.yaml
+    roles/vaults/mysql.yaml
   roles:
     - "{{ component }}"
