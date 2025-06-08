@@ -1,0 +1,20 @@
+command:
+ansible-vault creare <filnname>.yaml
+
+
+The command ansible-vault create <filename>.yaml is used to create a new encrypted file using Ansible Vault. When  run this command, Ansible prompts us to enter a vault password, which is used to encrypt the file.
+
+The file is created in an encrypted format, and can edit its contents directly in your default editor (e.g., vim, based on the EDITOR environment variable). Once saved, the file is encrypted with the provided vault password.
+
+The vault password is required to perform operations like creating, editing, viewing, or decrypting vault-encrypted files. Without the correct vault password, you cannot access or modify the encrypted content.
+
+The vault password is specific to Ansible Vault and is used to encrypt/decrypt the file itself. It is not related to the passwords or secrets stored inside the vaulted file (e.g., a MySQL root password).
+
+The vault password protects the file's contents, while the sensitive data (e.g., database credentials) inside the file is what you're securing. For example:
+Vault password: Used to unlock secrets.yaml.
+Target encrypt password: The actual secret (e.g., mysql_root_password: "s3cr3t123") stored in secrets.yaml.
+
+
+ansible-playbook -i inventory.ini -e "component=mysql" main.yaml --ask-vault-pass
+
+The --ask-vault-pass flag is one way to provide the vault password. Alternatively, you can use a password file or configure vault IDs for automation.
