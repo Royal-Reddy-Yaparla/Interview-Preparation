@@ -16,6 +16,7 @@
     ansible.builtin.command: useradd royal
     when: output.rc | int > 0
   
-  # - name: user already exists
-  #   ansible.builtin.command: useradd royal
-  #   when: output.rc | int < 0
+  - name: user already exists
+    ansible.builtin.debug:
+      msg: "user already exist"
+    when: output.rc | int == 0
