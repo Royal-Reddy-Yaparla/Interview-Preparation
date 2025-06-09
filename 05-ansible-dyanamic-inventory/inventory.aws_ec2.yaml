@@ -15,5 +15,5 @@ compose:
 keyed_groups:
   # add hosts to tag_Name_value groups for each aws_ec2 host's tags.Name variable.
   - key: tags.Name
-    prefix: 
+    prefix: ""
     separator: ""
