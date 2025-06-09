@@ -4,8 +4,13 @@ regions:
 filters:
   # This selects only running instances with tag `Environment` tag set to `dev`.
   tag:Name: frontend
+  instance-state-name : running
 hostnames:
   - private-ip-address
+
+compose:
+  # This sets the `ansible_host` variable to connect with the private IP address without changing the hostname.
+  ansible_host: private_ip_address
 
 keyed_groups:
 # This creates host groups based on architecture.
