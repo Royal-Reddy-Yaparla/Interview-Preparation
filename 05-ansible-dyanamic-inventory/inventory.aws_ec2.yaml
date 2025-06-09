@@ -6,3 +6,8 @@ filters:
   tag:Name: frontend
 hostnames:
   - private-ip-address
+
+keyed_groups:
+# This creates host groups based on architecture.
+- prefix: dynamic
+  key: frontend
