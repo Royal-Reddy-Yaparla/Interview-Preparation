@@ -24,3 +24,14 @@
 
 
 source: https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_strategies.html
+
+
+[defaults]
+forks = 3
+inventory= inventory.aws_ec2.yaml
+remote_user= ec2-user 
+
+here we can setup values those we are passing by command line , we can give default values 
+we don't have password passing option so 
+
+  ansible-playbook  -e "ansible_password=DevOs321" nginx-install.yaml
