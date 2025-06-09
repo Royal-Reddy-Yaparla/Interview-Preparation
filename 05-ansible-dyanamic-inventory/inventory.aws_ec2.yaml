@@ -16,4 +16,4 @@ keyed_groups:
   # add hosts to tag_Name_value groups for each aws_ec2 host's tags.Name variable.
   - key: tags.Name # filters tag:Name: frontend consider as key input
     prefix: "dynamic" 
-    separator: ""
+    separator: "-"
