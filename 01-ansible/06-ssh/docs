@@ -1,0 +1,24 @@
+here we need copy private key in ansible-master and save that laction in ansible-cfg like bello then asnible
+master connects nodes and excutes configuration 
+
+The private key (e.g., ssh-testing.pem) must be accessible on the control node, and its path is typically set in ansible.cfg under private_key_file to enable SSH authentication.
+
+The corresponding public key must be added to the ~/.ssh/authorized_keys file on each managed node for the specified remote_user (e.g., ec2-user). This allows passwordless SSH access.
+
+ansible.cfg
+[defaults]
+inventory= inventory.yaml
+remote_user= ec2-user 
+private_key_file=/home/ec2-user/ssh-testing.pem
+
+[ssh_connection]
+pipelining = True
+
+pipelining = True reduces SSH round-trips, speeding up execution.
+
+Private Key Permissions:
+chmod 400 /home/ec2-user/ssh-testing.pem 
+
+check ssh connection 
+ssh -i /home/ec2-user/ssh-testing.pem ec2-user@<node-ip>
+SSH connectivity (port 22 open) between the control node and managed nodes.
