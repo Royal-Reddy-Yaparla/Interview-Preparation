@@ -12,7 +12,8 @@ filter: # like quiery, passing fiter-values to get specied group of AWS-EC2
 # get output
 hostnames: # what is require from quires
   - private-ip-address
-
+compose:
+  ansible_host: private_ip_address
 
 # group them
 keyed_groups: # grouping hosts
@@ -20,5 +21,3 @@ keyed_groups: # grouping hosts
   - key: tags.Name # filter:tag:Name: frontend
     prefix: dynamic
     separator: "_"
-
-
