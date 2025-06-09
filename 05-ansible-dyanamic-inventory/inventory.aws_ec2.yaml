@@ -1,11 +1,3 @@
 plugin: amazon.aws.aws_ec2 
 regions:
 - us-east-1
-
-filters:
-  # This selects only running instances with tag `Environment` tag set to `dev`.
-  tag:Name: frontend
-
-hostnames:
-  # This option allows displaying the private ip addresses.
-  - private-ip-address
