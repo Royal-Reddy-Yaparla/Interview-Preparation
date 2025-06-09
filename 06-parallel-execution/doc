@@ -10,3 +10,14 @@
 
 
 - check config_file: ansible --version
+
+- Controlling playbook execution: strategies
+  - fork: default woulb be 5 , here have give 3 in ansible.cnf, connect to three later implement ther configration
+    This applies globally to all playbook runs using that ansible.cfg. Higher forks values increase parallelism but require more system resources (CPU, memory).
+
+  - serial: connect specied number of instance configuration will be implement wait for completion later other specied number of instance configuration will be implement
+
+
+- Forks: Controls parallel execution, determining how many hosts Ansible can connect to and process simultaneously. It’s a global setting (in ansible.cfg or via --forks) that limits the number of concurrent connections. For example, forks = 3 means Ansible works on up to 3 hosts at the same time.
+
+- Serial: Controls batch processing, specifying how many hosts (or a percentage) are processed in a single batch for a play, with Ansible waiting for all tasks to complete on that batch before moving to the next. It’s set in the playbook with the serial keyword. For example, serial: 2 means Ansible processes 2 hosts at a time, completing all tasks for those 2 before starting the next batch.
