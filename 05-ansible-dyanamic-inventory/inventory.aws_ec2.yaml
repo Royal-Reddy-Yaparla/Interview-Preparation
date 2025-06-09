@@ -1,19 +1,24 @@
-plugin: amazon.aws.aws_ec2 
-regions:
+# connect 
+plugin: amazon.aws.aws_ec2 # helps to interact with aws api by using plugin
+# search
+regions: # where to search ,we can provide multiple locations
 - us-east-1
-filters:
-  # This selects only running instances with tag `Environment` tag set to `dev`.
+
+# apply filter
+filter: # like quiery, passing fiter-values to get specied group of AWS-EC2
   tag:Name: frontend
   instance-state-name : running
-hostnames:
+
+# get output
+hostnames: # what is require from quires
   - private-ip-address
 
-compose:
-  # This sets the `ansible_host` variable to connect with the private IP address without changing the hostname.
-  ansible_host: private_ip_address
 
-keyed_groups:
+# group them
+keyed_groups: # grouping hosts
   # add hosts to tag_Name_value groups for each aws_ec2 host's tags.Name variable.
-  - key: tags.Name # filters tag:Name: frontend consider as key input
-    prefix: "dynamic" 
-    separator: "-"
+  - key: tags.Name # filter:tag:Name: frontend
+    prefix: dynamic
+    separator: "_"
+
+
