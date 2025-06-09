@@ -1,0 +1,23 @@
+- resources and outputs 
+- ec2 - sg 
+
+- automatic depenecy execution
+- variables
+  - default
+  - .tfvars (important)
+  - env
+  - preference
+  - 
+
+
+- CLI > .tfvar > ENVs >default > user-prompt (need to test)
+
+- conditions
+- loops
+- iterpolation 
+- input and output , from output choose values according requirement 
+
+
+
+
+
