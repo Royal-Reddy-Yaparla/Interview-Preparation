@@ -13,6 +13,7 @@ compose:
   ansible_host: private_ip_address
 
 keyed_groups:
-# This creates host groups based on architecture.
-- prefix: dynamic
-  key: frontend
+  # add hosts to tag_Name_value groups for each aws_ec2 host's tags.Name variable.
+  - key: tags.Name
+    prefix: 
+    separator: ""
