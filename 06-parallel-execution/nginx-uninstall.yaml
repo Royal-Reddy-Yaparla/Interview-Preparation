@@ -1,6 +1,7 @@
 - name: uninstall nginx
   hosts: dynamic_frontend # dynamic inventory info
   become: true # providing sudo permissions to install and start the service of nginx
+  serial: 2 # configuration implement first 2 later 2 like this 
   tasks:
   - name: nginx service stop 
     ansible.builtin.service:
