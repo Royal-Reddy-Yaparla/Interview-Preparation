@@ -1,1 +1,12 @@
-- parallal execution
+- here we can say to ansible to take config_file , based on requirent , if user wants to use custom config file we can maintain the .ansible.cfg , where we want to implement playbooks.
+
+- here ansible taking .ansible.cfg like below 
+  1. Environment_variables: export ANSIBLE_CONFIG=<location>
+  2. current directory: if we specified in current directory 
+  3. user_home_directory: 
+  4. default: /etc/ansible/ansible.cfg
+
+- perfer: current directory , and like hidden file 
+
+
+- check config_file: ansible --version

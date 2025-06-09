@@ -1,0 +1,14 @@
+- name: uninstall nginx
+  hosts: dynamic_frontend # dynamic inventory info
+  become: true # providing sudo permissions to install and start the service of nginx
+  tasks:
+  - name: nginx service stop 
+    ansible.builtin.service:
+      name: nginx 
+      state: stopped
+
+  - name: nginx uninstall
+    ansible.builtin.package:
+      name: nginx
+      state: absent
+  
