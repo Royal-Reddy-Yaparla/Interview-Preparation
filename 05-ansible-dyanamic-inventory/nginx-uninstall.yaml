@@ -1,6 +1,6 @@
 - name: uninstall nginx
   hosts: dynamic_frontend # dynamic inventory info
-  serial: 3 # configuration implement first 3 later 3 like this 
+  serial: 2 # configuration implement first 3 later 3 like this 
   become: true # providing sudo permissions to install and start the service of nginx
   tasks:
   - name: nginx service stop 
