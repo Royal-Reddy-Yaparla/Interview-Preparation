@@ -1,0 +1,16 @@
+- previoulsy have been giving host info statically , Ansible dynamic inventory, can query EC2 instances based on filters and dynamically group them into host groups using the aws_ec2 inventory plugin.
+
+- here few conditions
+  - naming convension would be , inventory file should be <ur_wish>.aws_ec2.yaml 
+  - provide aws configure 
+  - plugins
+  - regions
+
+
+- src: https://docs.ansible.com/ansible/latest/collections/amazon/aws/docsite/aws_ec2_guide.html
+
+- list_out groups 
+  ansible-inventory -i inventory.aws_ec2.yaml --graph
+
+- playbook execute
+  ansible-playbook -i inventory.aws_ec2.yaml -e "ansible_user=ec2-user" -e "ansible_password=DevOs321" nginx-install.yaml

@@ -10,7 +10,7 @@
 
 - adhoc commands
 
-- valut 
+- valut and ssm parameterized
 
 - nohup vs & background
 
@@ -25,4 +25,9 @@
 - configuration 
   - master and node
   - local
+
+- ssh
+
+- parallel execution 
+
 
