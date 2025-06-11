@@ -1,0 +1,14 @@
+- collection/module will be execution on remote-servers , to perform specified task
+  - debug
+  - package 
+
+- plugins are adding extension/fucntionality to ansible server , to interact with out-side resouces 
+  lookup plugin, inventory , filter 
+
+- we can develop custom plugings which should be in role's librery-repo
+
+- advantages:
+  - best in configuration.
+
+- disadvantages:
+  - poor in state management, we can't track process , if provioning aws resouces by ansible.it creates duplicate resources

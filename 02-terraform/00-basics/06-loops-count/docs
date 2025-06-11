@@ -1,0 +1,7 @@
+if terraform couldn't find the values in variables.tf , terraform.tfvars , and environment variables , it will ask 
+user in prompt
+
+
+- precedence: 
+
+*.tfvars > default-variables > environment-vars > prompting 

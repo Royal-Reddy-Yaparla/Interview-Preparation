@@ -1,0 +1,10 @@
+we can pass values through env also , coming to format
+TF_VAR_<variable_name>
+
+set-up envs
+export TF_VAR_instance_type=t3.medium
+
+unset-up envs 
+unset TF_VAR_instance_type
+
+if terraform couldn't find the values variables.tf and terraform.tfvars , it will check in environment variables

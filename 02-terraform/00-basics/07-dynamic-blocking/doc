@@ -1,0 +1,19 @@
+dynamic "<block_type>" {
+  for_each = <iterator>
+  content {
+    # what the <block_type> block should contain
+  }
+}
+
+
+Use Case	
+Repeat a block inside a resource (like ingress, tag, provisioner)	- Use dynamic block
+Repeat the entire resource (like creating 3 EC2s or 5 S3 buckets)	- Use count or for_each
+
+
+count = N times
+for_each = list, map
+dynamic = Block inside a resource
+
+
+

@@ -1,0 +1,2 @@
+default varibles will be override by *.tfvars , compare to 
+default variables *.tfvars  has high priority.
