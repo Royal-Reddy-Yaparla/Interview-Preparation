@@ -1,0 +1,24 @@
+locals allow us to store the values those 
+are involve with login , expression , fucnctions and values.
+
+but in variables we cant call variable in another 
+variables, 
+
+similary between them is 
+
+those two are passing values , but compare 
+to varables , locals supports the expression, fucnctions 
+
+the point is we can't override the locals
+like variables 
+
+
+variables are external , passed by the user
+
+but locals are Internal values, used within Terraform code only
+
+Often depend on variables, expressions, or other logic
+
+Cannot be overridden externally
+
+Used to avoid duplication and simplify logic

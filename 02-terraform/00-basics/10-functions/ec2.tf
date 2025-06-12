@@ -3,7 +3,7 @@ resource "aws_instance" "my_instance" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.allow_all.id]
-  tags = merge( # to merge maps
+  tags = merge( # to merge maps if any key is same that value will be ovverride by the seconde value
     var.common_tags,
     {
       Name        = "Web-${var.region}",

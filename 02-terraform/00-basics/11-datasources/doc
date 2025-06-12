@@ -1,15 +1,15 @@
-In Terraform, we can use built-in functions, but we cannot create custom functions.
-Functions are used to perform specific tasks like working with strings, numbers, lists, maps, etc.
+datasource allows us to quiry and fetch info from providers(Like AWS) this info is read only and can be input for 
+creating / configuring other resources
 
-examples
-length() → Returns the length of a list or string
-max() → Returns the maximum value among the inputs
-min() → Returns the minimum value among the inputs
+Retrieving an AMI ID dynamically by passing filters to the AWS provider
 
-to check sample fucntion by terraform we can do by command
+remember: 
+data-sources:
+    - to read info from existing infrastructure - which is not created by terraform like outside terraform
+        ex: ami_ids, VPC(default), subnet.
+    -  it is not created , only read-only 
 
-terraform cosole
->> max(2, 5, 6)
-output would be 6 
+Attribute Reference (from resource)
+    - fetch info from resouces those are created by terraform , here quiry info not exist , it will be created.
+    - ex: passing security group id to ec2 resouce etc
 
-we can find function from documentation based on requirement.
