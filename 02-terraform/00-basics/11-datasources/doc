@@ -1,0 +1,15 @@
+In Terraform, we can use built-in functions, but we cannot create custom functions.
+Functions are used to perform specific tasks like working with strings, numbers, lists, maps, etc.
+
+examples
+length() → Returns the length of a list or string
+max() → Returns the maximum value among the inputs
+min() → Returns the minimum value among the inputs
+
+to check sample fucntion by terraform we can do by command
+
+terraform cosole
+>> max(2, 5, 6)
+output would be 6 
+
+we can find function from documentation based on requirement.

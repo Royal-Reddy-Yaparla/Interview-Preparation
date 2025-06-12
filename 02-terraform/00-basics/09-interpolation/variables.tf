@@ -8,13 +8,28 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "ec2_tags" {
-  type = map(string)
-  default = {
-    "Name" = "sample",
-    "Terraform" = true 
-  }
+variable "region" {
+  type    = string
+  default = "us-east-1"
 }
+
+variable "environment" {
+  type    = string
+  default = "development"
+}
+
+variable "ec2_name" {
+  type    = string
+  default = "web"
+}
+
+# variable "ec2_tags" {
+#   type = map(string)
+#   default = {
+#     "Name" = "sample",
+#     "Terraform" = true 
+#   }
+# }
 
 variable "sg_name" {
   type    = string
@@ -43,22 +58,22 @@ variable "ingress_ports" {
   default = [
     {
       from_port = 22 # SSH
-      to_port = 22
+      to_port   = 22
     },
     {
       from_port = 80 # HTTP
-      to_port = 80
+      to_port   = 80
     },
     {
       from_port = 443 # HTTPS 
-      to_port = 443 
+      to_port   = 443
     },
   ]
 }
 
 variable "ingress_protocol" {
   type    = string
-  default = "-1"  # values would be : [ "tcp","udp", all = "-1" ]
+  default = "-1" # values would be : [ "tcp","udp", all = "-1" ]
 }
 
 variable "ingress_cidr_blocks" {

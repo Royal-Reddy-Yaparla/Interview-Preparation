@@ -1,0 +1,1 @@
+Interpolation is used to concatenate variables and expressions together, and we use the ${} syntax to embed them inside strings.
