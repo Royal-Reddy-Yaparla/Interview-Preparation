@@ -1,0 +1,8 @@
+Terraform keeps track of cloud infrastructure using a state file. This file acts as a source of truth for what resources actually exist. 
+When  make changes in your Terraform code, those changes define what you want — the desired state. 
+
+Terraform then compares that to the current state (from the state file), and only applies what’s different. Once applied, the state file gets updated to reflect the new reality.
+
+For teams, it's a good practice to store this state file remotely — for example, 
+
+in an S3 bucket — so everyone shares the same source of truth. Adding state locking with something like DynamoDB(depricate) use s3 native locking helps avoid conflicts, making sure only one person can make changes at a time. This prevents issues like duplicate resources or accidental overwrites.

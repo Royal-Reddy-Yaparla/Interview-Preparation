@@ -1,0 +1,10 @@
+ provisioners allow us to run scripts or commands during the creation or destruction of a resource. They’re useful when we need to perform extra setup steps that aren’t possible through resource arguments alone.
+
+There are two main types:
+
+local-exec: This runs locally on the machine where Terraform is executed. For example, you can use it to log an IP address, send a notification, or trigger a local script after a resource is created.
+
+remote-exec: This runs commands on the target resource itself, typically over SSH or WinRM. It's often used to install packages, configure services, or run bootstrap scripts after a VM or instance is created.
+
+Note: 
+Provisioners are helpful, but they are considered a last resort in Terraform. If something can be done through native Terraform resources or modules — that’s the preferred approach. Use provisioners when absolutely necessary.
