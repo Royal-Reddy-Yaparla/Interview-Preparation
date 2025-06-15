@@ -11,7 +11,3 @@ data "aws_ami" "custom_ami" {
     values = ["ebs"]
   }
 }
-
-output "ami_id" {
-  value = data.aws_ami.custom_ami.id
-}

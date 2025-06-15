@@ -13,3 +13,8 @@ terraform apply -var-file=DEV/terraform.tfvars -auto-approve
 - switch to PROD and provisioning
 terraform init -reconfigure -backend-config=PROD/backend.tfbackend
 terraform apply -var-file=PROD/terraform.tfvars -auto-approve
+
+
+workaspace
+
+terraform workspace -help
