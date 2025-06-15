@@ -1,0 +1,15 @@
+When managing multiple environments like DEV, UAT, and PROD, using separate *.tfvars files allows us to customize configurations (like instance type, region, tags, etc.) per environment.
+
+In this approach, we also use a separate backend configuration for each environment — to store state in different remote locations (e.g., separate S3 buckets or folders) — so that DEV and PROD do not interfere with each other.
+
+This approach works well for small to mid-sized projects. However, for larger environments or when managing many environments, constantly reconfiguring the backend can become repetitive and error-prone.
+
+
+
+- switch to DEV and provisioning
+terraform init -reconfigure -backend-config=DEV/backend.tfbackend
+terraform apply -var-file=DEV/terraform.tfvars -auto-approve
+
+- switch to PROD and provisioning
+terraform init -reconfigure -backend-config=PROD/backend.tfbackend
+terraform apply -var-file=PROD/terraform.tfvars -auto-approve
