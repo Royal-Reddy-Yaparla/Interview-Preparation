@@ -48,7 +48,7 @@ decimal 0 to 9
 hexgonal 
 
 
-in aws CIDR size between 16 and 28max
+in aws CIDR size between /16 and /28max
 so by taking max , won't be charged for that 
 
 0.0.0.0/0 is internet notation.
