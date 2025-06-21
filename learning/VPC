@@ -1,0 +1,81 @@
+# Steps for vpc provisioning 
+- Create VPC
+- Create Internet gateway
+
+- create subnets
+      - public
+      - private
+      - database 
+  
+- create public route-table
+- attach public route-table  to Internet gateway
+
+
+-  NAT gateway
+      - allocate elastic IP 
+      - depends on Internet gateway
+
+- create private route-table
+- create database route-table
+
+- create routes 
+      - public 
+          - gateway - IGW
+          - destination - 0.0.0.0/0
+
+      - private
+            - natgate way
+            - destination - 0.0.0.0/0
+
+      - database 
+            - natgate way
+            - destination - 0.0.0.0/0
+
+- create public route and attach with  public route-table
+- associate public subnets to public route-table
+
+- create private route and attach with  private route-table
+- associate private subnets to private route-table
+
+- create database route and attach with  database route-table
+- associate database subnets to database route-table
+
+
+----------------------------------------------------------
+
+- NAT gateway enables outbound traffic for instance in private subnets , if need install package , patches 
+we can make use of NAT gateways, only work for outbound traffic not inbound
+      - required Elastic IP
+      - public-subnet -1a 
+      - depend on Internet gateway is available or not 
+
+
+- vpc peering 
+by default two vpcs can't communicate , by vpc peering VPCs will communicate with each other
+
+scenario is there difference env's VPC 
+Dev | QA | Prod
+
+if we want some data exchange , some data required for Dev environment from Production , here , VPC 
+peering helps to this process 
+
+here 2nd VPC combinations are 
+      - my account same region
+      - my account different region
+
+      - different account same region
+      - different account different region
+
+NOTE: VPC's CICD should be different
+
+VPC Peering 
+----------------------------------------------------------
+- peering request 
+- route 
+      - destination - target VPC IPs - similarly in target VPC also route to initial VPC's CIDR ranges
+      - based on requirement , only allow that routes 
+            - public(CIDR range) or private(CIDR range) or database(CIDR range) 
+            by taking specific (CIDR range) to avoid to giving entair VPC 
+
+- in module , we can give VPC peering as an option
+

@@ -1,0 +1,60 @@
+VPC
+
+CIDR= Classless Inter-Domain Routing, a method for allocating IP addresses and routing traffic more efficiently on the internet.
+
+IPV4 allows - 32 bit
+
+0  .  0  .  0  . 0 to 
+
+2^8 . 2^8 . 2^8 . 2^8  = 255.255.255.255 = 11111111.11111111.11111111.11111111
+
+00000000.00000000.00000000.00000000
+
+
+0 0 0 0 0 0 0 1 = 1*2^0 +  0*2^1 +  0*2^2 + 0*2^3 + 0*2^4 +  0*2^5 +  0*2^6 +  0*2^7
+                = 1     + 0      + 0      + 0     + 0     + 0      + 0      + 0
+
+0 0 1 1 1 0 1 0 = 0*2^0 +  1*2^1 +  0*2^2 + 1*2^3 + 1*2^4 +  1*2^5 +  0*2^6 +  0*2^7
+                =  0 + 2 +  0 + 8 + 16 + 32 + 0 + 0  = 58 
+
+2^32 = 32 bit = 255.255.255.255 = 2^8 * 2^8 * 2^8 * 2^8 = 4,29,49,67,296 servers = 426cr 
+2^24 = 24 bit = (blocked-for-network).255.255.255 = 2^8 * 2^8 *  2^8 = 1,67,77,216 servers = 1cr 
+2^16 = 16 bit = (blocked-for-network).(blocked-for-network).255.255 = 2^8 * 2^8 = 65,536 servers = 65k
+2^8  =  8 bit  = (blocked-for-network).(blocked-for-network).(blocked-for-network).255 = 2^8 = 256 servers
+
+2^20 = 20bits means for network reserved in 32 bit , remaining 12 bit for servers so
+2^12 for servers = 2^8 + 2^4 = 256 + 16 = 272 servers
+
+for example 
+2^16 = 16 bit =  65,536 servers 
+10.0.0.0/16 bit 
+---------------------
+10.0 (fixed)| 0.0(changed)
+network  + hosts
+start 10.0.0.0
+      10.0.0.1
+         |
+      10.0.0.255
+      10.0.1.0
+      10.0.1.1
+         |
+      10.0.2.0
+         |
+      10.0.255.255 end 
+
+
+binary 0 to 1
+decimal 0 to 9 
+hexgonal 
+
+
+in aws CIDR size between 16 and 28max
+so by taking max , won't be charged for that 
+
+0.0.0.0/0 is internet notation.
+
+private subnet ranges
+------------------------------------------------------------------
+- 10.0.0.0/8 - 10.0.0.0 to 10.255.255.255 and is commonly used for large networks. 
+- 172.16.0.0/12 - 172.16.0.0 to 172.31.255.255 and is suitable for medium-sized networks. 
+- 192.168.0.0/16 - 192.168.0.0 to 192.168.255.255 and is commonly used for smaller networks like home networks. 

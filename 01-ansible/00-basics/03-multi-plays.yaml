@@ -20,3 +20,13 @@
   - name: hello with task-2 from play-2 
     ansible.builtin.debug:
       msg: "Hello with task-2 from play-2"
+
+
+- name: Create a directory
+  hosts: allapp
+  become: true
+  tasks:
+  - name: Create a directory if it does not exist
+    ansible.builtin.file:
+      path: /opt/backup-t4q3
+      state: directory
