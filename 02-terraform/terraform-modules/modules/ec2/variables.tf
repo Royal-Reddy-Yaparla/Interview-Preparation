@@ -21,22 +21,9 @@ variable "subnet_id" {
   default = "subnet-06b38097daef76f2c" #us-east-1a
 }
 
-variable "common_tags" {
-  type = map 
-  default = {
-    Terraform = true
-  }
-}
 
-variable "component" {
-  type = string
-}
 
-variable "environment" {
-  type = string
-}
-
-variable "ec2_tags" {
+variable "tags" {
   type = map 
   default = {}
 }

@@ -1,7 +1,7 @@
 module "vpc" {
   source = "../../modules/VPC"
-  project = var.project
+  vpc_tags = local.vpc_tags
   environment = var.environment
-  common_tags = var.common_tags
-  vpc_tags = var.vpc_tags
+  project = var.project
 }
+

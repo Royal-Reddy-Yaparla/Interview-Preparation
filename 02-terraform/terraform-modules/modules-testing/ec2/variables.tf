@@ -1,5 +1,5 @@
 variable "instance_type" {
-    default = "t2.micro" # for validation test try t2.large
+  default = "t2.micro" # for validation test try t2.large
 }
 
 variable "security_group_ids" {
@@ -12,7 +12,7 @@ variable "subnet_id" {
 
 variable "common_tags" {
   default = {
-    project = "ecom"
+    project   = "ecom"
     terraform = true
   }
 }
@@ -22,12 +22,12 @@ variable "component" {
 }
 
 variable "environment" {
-    default = "dev"
+  default = "dev"
 }
 
 variable "ec2_tags" {
   default = {
-    region = "us-east-1"
+    region  = "us-east-1"
     created = "devops"
   }
 }
