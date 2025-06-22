@@ -30,3 +30,52 @@ variable "database_cidr_block" {
   type = list
   default = ["10.0.21.0/24","10.0.22.0/24"]
 }
+
+
+variable "public_subnet_tags" {
+  type = map
+  default = {}
+}
+
+variable "private_subnet_tags" {
+  type = map
+  default = {}
+}
+
+variable "database_subnet_tags" {
+  type = map
+  default = {}
+}
+
+variable "igt_tags" {
+  type = map
+  default = {}
+}
+
+variable "elastic_ip_tags" {
+  type = map
+  default = {}
+}
+
+
+
+variable "nat_gateway_tags" {
+  type = map
+  default = {}
+}
+
+
+variable "public_rt_tags" {
+  type = map
+  default = {}
+}
+
+variable "private_rt_tags" {
+  type = map
+  default = {}
+}
+
+variable "database_rt_tags" {
+  type = map
+  default = {}
+}
