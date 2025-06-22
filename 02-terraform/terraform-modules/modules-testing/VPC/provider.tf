@@ -6,11 +6,11 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "my-terraform-module-demo"
-    key    = "practice-demo"
-    region = "us-east-1"
+    bucket       = "my-terraform-module-demo"
+    key          = "practice-demo"
+    region       = "us-east-1"
     use_lockfile = true
-    encrypt = true
+    encrypt      = true
   }
 }
 
