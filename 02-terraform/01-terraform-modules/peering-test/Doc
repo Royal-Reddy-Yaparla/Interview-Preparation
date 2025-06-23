@@ -1,0 +1,18 @@
+- create vpc 
+- create 2 instances 
+    - with new vpc | allow SSH | public-1a
+    - with default-vpc | allow all 
+
+- install nginx in default-vpc's instance 
+    - start nginx service
+    - check curl localhost , make sure getting reponse
+
+- try to access new vpc's instance 
+    - curl <default-vpc's instance public_ip> , will get reponse 
+    - curl <default-vpc's instance private_ip> , won't get reponse so internal not accepting
+
+- now do vpc peering , with curl default-vpc and new vpc
+    - here in new vpc's public-route-table add route of default-vpc cidr with peering_id
+    - same way default-vpc default route-table add route of new-vpc's cidr . 
+
+- then only work curl <default-vpc's instance private_ip>  , you can check now 

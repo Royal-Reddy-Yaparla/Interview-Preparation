@@ -1,0 +1,4 @@
+- module fetch from git
+    source = "git::<git_url>?ref=main"
+- after update already modules , need to upgrade the module , for this , 
+    terraform init -upgrade
