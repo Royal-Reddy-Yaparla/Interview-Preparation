@@ -55,6 +55,12 @@ variable "ingress_to_port" {
 
 
 variable "ingress_ports" {
+  type = list(object({
+    from_port = number
+    to_port = number
+    ingress_protocol = string
+    ingress_cidr_blocks = list(string)
+  }))
   default = [
     {
       from_port = 22 # SSH

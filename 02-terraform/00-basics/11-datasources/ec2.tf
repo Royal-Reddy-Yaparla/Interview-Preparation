@@ -29,7 +29,6 @@ resource "aws_security_group" "allow_all" {
       protocol    = var.ingress_protocol
       cidr_blocks = var.ingress_cidr_blocks
     }
-
     # ipv6_cidr_blocks = ["::/0"]
   }
 
