@@ -1,0 +1,5 @@
+Project classified into two parts
+- project infra: one time infra , we will start VPC, SG , ALB etc 
+- application infra: EC2, Route53 records, AMI etc ...
+
+ 
