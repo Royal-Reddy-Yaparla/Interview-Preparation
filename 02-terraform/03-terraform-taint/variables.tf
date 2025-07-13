@@ -3,25 +3,21 @@ variable "ami_id" {
   default = "ami-09c813fb71547fc4f"
 }
 
-variable "instance_name" {
-  type    = list(string)
-  default = ["database", "web", "backend"]
-}
+# variable "components" {
+#   type    = list(string)
+#   default = ["database", "web", "backend"]
+# }
 
-variable "instance_info" {
-  type    = map 
+variable "components" {
   default = {
-    database = "t2.medium",
     frontend = "t2.micro"
-    backend = "t2.small"
-  }
-
+    }
 }
 
-variable "instance_type" {
-  type = string
-  # default = "t2.micro" # commenting for checking
-}
+# variable "instance_type" {
+#   type = string
+#   # default = "t2.micro" # commenting for checking
+# }
 
 variable "sg_name" {
   type    = string

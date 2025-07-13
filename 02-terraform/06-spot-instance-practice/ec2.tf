@@ -6,10 +6,17 @@ resource "aws_instance" "my_instance" {
   root_block_device {
     volume_size = 30
   }
+  # instance_market_options {
+  #   market_type = "spot"
+  #   spot_options {
+  #     max_price = 0.0031
+  #   }
+  # }
+  # instance_type = "t4g.nano"
   tags = merge( # to merge maps
     var.common_tags,
     {
-      Name        = "Web-${var.region}",
+      Name        = "${var.instances[count.index]}",
       Environment = "Development"
     }
   )

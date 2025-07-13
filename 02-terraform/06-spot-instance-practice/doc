@@ -1,0 +1,15 @@
+datasource allows us to quiry and fetch info from providers(Like AWS) this info is read only and can be input for 
+creating / configuring other resources
+
+Retrieving an AMI ID dynamically by passing filters to the AWS provider
+
+remember: 
+data-sources:
+    - to read info from existing infrastructure - which is not created by terraform like outside terraform
+        ex: ami_ids, VPC(default), subnet.
+    -  it is not created , only read-only 
+
+Attribute Reference (from resource)
+    - fetch info from resouces those are created by terraform , here quiry info not exist , it will be created.
+    - ex: passing security group id to ec2 resouce etc
+
