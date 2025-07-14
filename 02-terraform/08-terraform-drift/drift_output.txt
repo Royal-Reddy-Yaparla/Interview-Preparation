@@ -1,0 +1,44 @@
+[0m[1mdata.aws_ami.custom_ami: Reading...[0m[0m
+[0m[1maws_security_group.allow_all: Refreshing state... [id=sg-0c90f956dac61241c][0m
+[0m[1mdata.aws_ami.custom_ami: Read complete after 7s [id=ami-09c813fb71547fc4f][0m
+[0m[1maws_instance.my_instance: Refreshing state... [id=i-06155255d4b2de7ab][0m
+
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform
+[0m
+Terraform detected the following changes made outside of Terraform since the
+last "terraform apply" which may have affected this plan:
+
+[1m  # aws_instance.my_instance[0m has changed
+[0m  [33m~[0m[0m resource "aws_instance" "my_instance" {
+        id                                   = "i-06155255d4b2de7ab"
+      [33m~[0m[0m public_ip                            = "13.218.235.138" [33m->[0m[0m "34.239.116.137"
+        tags                                 = {
+            "Environment" = "Development"
+            "Name"        = "terraform-admin"
+            "Project"     = "roboshop"
+            "Terraform"   = "true"
+        }
+        [90m# (38 unchanged attributes hidden)[0m[0m
+
+        [90m# (8 unchanged blocks hidden)[0m[0m
+    }
+
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Changes to Outputs:
+  [33m~[0m[0m public_ip = "13.218.235.138" [33m->[0m[0m "34.239.116.137"
+
+You can apply this plan to save these new output values to the Terraform
+state, without changing any real infrastructure.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"

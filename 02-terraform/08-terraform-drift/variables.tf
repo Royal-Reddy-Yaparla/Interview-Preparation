@@ -1,27 +1,39 @@
 variable "ami_id" {
   type    = string
-  default = "ami-09c813fb71547fc4f"
+  default = ""
 }
 
-# variable "components" {
-#   type    = list(string)
-#   default = ["database", "web", "backend"]
-# }
+variable "instance_type" {
+  type    = string
+  default = "t2.micro"
+}
 
-variable "components" {
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
+
+variable "environment" {
+  type    = string
+  default = "development"
+}
+
+variable "instances" {
+  type    = list(string)
+  default = ["web", "backend", "database"]
+}
+
+
+variable "common_tags" {
   default = {
-    backend = "t2.micro"
-    }
+    Project   = "roboshop"
+    Terraform = true
+  }
 }
-
-# variable "instance_type" {
-#   type = string
-#   # default = "t2.micro" # commenting for checking
-# }
 
 variable "sg_name" {
   type    = string
-  default = "allow_all_backend"
+  default = "allow_all"
 }
 
 variable "sg_description" {
@@ -40,9 +52,28 @@ variable "ingress_to_port" {
   default = 0
 }
 
+
+
+variable "ingress_ports" {
+  default = [
+    {
+      from_port = 22 # SSH
+      to_port   = 22
+    },
+    {
+      from_port = 80 # HTTP
+      to_port   = 80
+    },
+    {
+      from_port = 443 # HTTPS 
+      to_port   = 443
+    },
+  ]
+}
+
 variable "ingress_protocol" {
   type    = string
-  default = "-1"
+  default = "tcp" 
 }
 
 variable "ingress_cidr_blocks" {
