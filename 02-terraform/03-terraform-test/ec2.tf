@@ -14,7 +14,7 @@ resource "aws_security_group" "allow_all" {
   # vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "allow_tls"
+    Name = "allow_tls"  
   }
 
   ingress {

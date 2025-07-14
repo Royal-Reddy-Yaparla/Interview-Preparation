@@ -2,7 +2,9 @@ resource "aws_instance" "my_instance" {
   ami                    = data.aws_ami.custom_ami.id
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.allow_all.id]
-
+  root_block_device {
+      volume_size = 25
+  }
     provisioner "remote-exec" {
     connection {
       type     = "ssh"

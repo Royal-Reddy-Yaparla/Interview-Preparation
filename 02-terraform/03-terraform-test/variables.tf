@@ -10,7 +10,7 @@ variable "ami_id" {
 
 variable "components" {
   default = {
-    frontend = "t2.micro"
+    backend = "t2.micro"
     }
 }
 
@@ -21,7 +21,7 @@ variable "components" {
 
 variable "sg_name" {
   type    = string
-  default = "allow_all"
+  default = "allow_all_backend"
 }
 
 variable "sg_description" {
