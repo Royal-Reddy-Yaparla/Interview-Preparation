@@ -1,22 +1,27 @@
 resource "aws_instance" "my_instance" {
-  count                  = length(var.instances) # length function
   ami                    = data.aws_ami.custom_ami.id
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.allow_all.id]
-  root_block_device {
-    volume_size = 30
+
+    provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "ec2-user"
+      password = "DevOps321"
+      host     = self.public_ip
+    }
+
+    inline = [
+      "sudo yum install -y yum-utils",
+      "sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo",
+      "sudo yum -y install terraform"
+    ]
   }
-  # instance_market_options {
-  #   market_type = "spot"
-  #   spot_options {
-  #     max_price = 0.0031
-  #   }
-  # }
-  # instance_type = "t4g.nano"
+
   tags = merge( # to merge maps
     var.common_tags,
     {
-      Name        = "${var.instances[count.index]}",
+      Name        = "terraform-admin",
       Environment = "Development"
     }
   )
@@ -39,13 +44,14 @@ resource "aws_security_group" "allow_all" {
       protocol    = var.ingress_protocol
       cidr_blocks = var.ingress_cidr_blocks
     }
+
     # ipv6_cidr_blocks = ["::/0"]
   }
 
   egress {
     from_port   = var.egress_from_port
     to_port     = var.ingress_to_port
-    protocol    = var.egress_from_port
+    protocol    = var.egress_protocol
     cidr_blocks = var.egress_cidr_blocks
     # ipv6_cidr_blocks = ["::/0"]
   }

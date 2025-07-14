@@ -33,7 +33,7 @@ variable "common_tags" {
 
 variable "sg_name" {
   type    = string
-  default = "allow_all"
+  default = "allow_all_sg"
 }
 
 variable "sg_description" {
