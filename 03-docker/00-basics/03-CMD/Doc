@@ -1,0 +1,1 @@
+CMD instruction in Dockerfile , to execute instruction at container-running time, not building time , here RUN command is run at image building time.
