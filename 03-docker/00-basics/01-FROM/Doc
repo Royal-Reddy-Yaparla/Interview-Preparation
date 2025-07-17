@@ -1,0 +1,4 @@
+FROM , is usually as first instruction of dockerfile(there is exemption), 
+which sets, base-line image of container like ubuntu, almalinux etc
+every instruction that follows build on the top of the base image. 
+instruction.
