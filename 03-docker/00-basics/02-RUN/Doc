@@ -1,0 +1,2 @@
+RUN instruction , will execute any command and create a new layer on top of current image 
+multiple RUN instructions can , use in single Dockerfile
