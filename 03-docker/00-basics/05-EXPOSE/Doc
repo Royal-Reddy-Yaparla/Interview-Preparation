@@ -1,0 +1,7 @@
+EXPOSE instruction is only for information container
+going to run on which port.
+
+EXPOSE doesn't publish port.
+
+
+

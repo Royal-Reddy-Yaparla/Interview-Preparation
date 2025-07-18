@@ -16,7 +16,7 @@ LABEL team="backend"
 #  - UndefinedVar: Usage of undefined variable '$BUILD_DATE' 
 #  - UndefinedVar: Usage of undefined variable '$GIT_COMMIT'
 
-
+EXPOSE 80/tcp
 # install nginx
 RUN dnf install nginx -y 
 
