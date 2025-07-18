@@ -24,13 +24,17 @@ EXPOSE 80/tcp
 RUN dnf install nginx -y 
 
 # remove nginx default page
-RUN rm -rf /usr/share/nginx/html/*
+RUN rm /usr/share/nginx/html/index.html
 
 # adding file for nginx repo
-ADD index.html /usr/share/nginx/html
+ADD index.html /usr/share/nginx/html/
 
 # download from url and store in /tmp
 ADD https://filesamples.com/samples/document/txt/sample3.txt /tmp/ 
+
+# untar the file
+ADD sample-1.tar /tmp/
+
 # run command at container running time
 CMD ["nginx","-g","daemon off;"]
 
