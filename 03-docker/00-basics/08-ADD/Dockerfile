@@ -32,8 +32,6 @@ ADD index.html /usr/share/nginx/html/
 # download from url and store in /tmp
 ADD https://filesamples.com/samples/document/txt/sample3.txt /tmp/ 
 
-# untar the file
-ADD sample-1.tar /tmp/
 
 # run command at container running time
 CMD ["nginx","-g","daemon off;"]
