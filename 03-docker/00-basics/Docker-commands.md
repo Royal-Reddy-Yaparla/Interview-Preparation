@@ -58,3 +58,9 @@ remove container
 docker rm <container_id>
 
 ```
+
+interact with container
+```
+docker exec -it ea760ff43733 bash
+
+```

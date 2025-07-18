@@ -1,0 +1,5 @@
+COPY and ADD instructions helps , copy the files from local to container
+
+- ADD instruction has additional features
+    - we can directly fetch files from directly from internet to container.
+    - it can untar directly into containers.
