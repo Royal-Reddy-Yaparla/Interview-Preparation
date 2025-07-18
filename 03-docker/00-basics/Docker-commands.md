@@ -64,3 +64,7 @@ interact with container
 docker exec -it ea760ff43733 bash
 
 ```
+
+```
+docker ps -a --no-trunc
+```

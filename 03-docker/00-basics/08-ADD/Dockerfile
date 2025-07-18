@@ -15,10 +15,9 @@ LABEL team="backend"
 #  2 warnings found (use docker --debug to expand): 
 #  - UndefinedVar: Usage of undefined variable '$BUILD_DATE' 
 #  - UndefinedVar: Usage of undefined variable '$GIT_COMMIT'
-
-ENV PROJECT = "ecommerce" \
-    ENVIRONMENT = "dev"   \
-    TEAM = "backend"
+ENV PROJECT="ecommerce" \
+    ENVIRONMENT="dev"   \
+    TEAM="backend"
 
 EXPOSE 80/tcp
 # install nginx
