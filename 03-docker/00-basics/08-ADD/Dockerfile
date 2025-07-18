@@ -30,7 +30,7 @@ RUN rm -rf /usr/share/nginx/html/*
 ADD index.html /usr/share/nginx/html
 
 # download from url and store in /tmp
-ADD ADD https://filesamples.com/samples/document/txt/sample3.txt /tmp/ 
+ADD https://filesamples.com/samples/document/txt/sample3.txt /tmp/ 
 # run command at container running time
 CMD ["nginx","-g","daemon off;"]
 
