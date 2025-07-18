@@ -7,10 +7,17 @@ LABEL version="v1.0.0"
 LABEL description="frontend-component nginx-image"
 LABEL description="frontend-component nginx-image"
 LABEL github_resource="https://github.com/practice"
-LABEL github_commit="${GIT_COMMIT}"
-LABEL build_date="${BUILD_DATE}"
+# LABEL github_commit="${GIT_COMMIT}"
+# LABEL build_date="${BUILD_DATE}"
 LABEL environment="stage"
 LABEL team="backend"
+# those volume will get in jenkins integration
+#  2 warnings found (use docker --debug to expand): 
+#  - UndefinedVar: Usage of undefined variable '$BUILD_DATE' 
+#  - UndefinedVar: Usage of undefined variable '$GIT_COMMIT'
+
+
+
 
 # install nginx
 RUN dnf install nginx -y 
