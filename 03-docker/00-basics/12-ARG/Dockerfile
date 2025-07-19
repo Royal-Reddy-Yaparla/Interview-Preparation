@@ -1,5 +1,5 @@
 ARG version
-FROM almalinux:${version: -latest}
+FROM almalinux:${version:-latest}
 
 LABEL environment="stage" \
      team="backend"
