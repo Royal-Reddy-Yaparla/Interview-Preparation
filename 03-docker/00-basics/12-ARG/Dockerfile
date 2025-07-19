@@ -1,7 +1,7 @@
 ARG version
 FROM almalinux:${version:-latest}
 
-LABEL environment="stage" \
+ENV environment="stage" \
      team="backend"
    
 ARG project="ecommerce_application"
