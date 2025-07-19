@@ -11,6 +11,6 @@ WORKDIR /tmp/ecommerce_application
 
 # check present directory
 RUN pwd
-
+RUN echo "Hello I am in work dir" > hello.txt
 # maintain container in active time of check 
-CMD ["sleep" "1000"]
+CMD ["sleep","1000"]
