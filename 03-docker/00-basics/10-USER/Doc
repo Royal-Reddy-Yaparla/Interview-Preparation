@@ -1,0 +1,12 @@
+===============Important====================
+USER is used in a Dockerfile to specify the user the container should run as from that point onward.
+
+By default, Docker containers run as root, which can pose security risks (e.g., privilege escalation, tampering with host or other containers).
+
+It's a best practice to create and switch to a non-root user for better isolation and security.
+
+Prevents accidental changes to the host or other containers.
+
+Enforces principle of least privilege.
+
+Some platforms (like OpenShift) require containers to run as non-root.

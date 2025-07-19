@@ -1,0 +1,6 @@
+ENTRYPOINT instruction 
+--------------------------------
+- it can override the CMD values ; CMD passes default values while container running time.
+- ENTRYPOINT can't be overriden , if we want , we can 
+- using combination of both , is the best practices ,  ENTRYPOINT will have command, default args can be supplied by CMD
+You can always override default args through command line

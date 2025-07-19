@@ -66,5 +66,5 @@ docker exec -it ea760ff43733 bash
 ```
 
 ```
-docker ps -a --no-trunc
+docker ps -a --no-trunc --progress=plain
 ```

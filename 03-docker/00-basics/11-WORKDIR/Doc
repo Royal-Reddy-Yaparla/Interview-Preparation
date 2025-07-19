@@ -1,0 +1,4 @@
+WORKDIR sets the working directory inside the container image for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile.
+
+When the container is running, this directory becomes the default working directory for the running container process.
+
