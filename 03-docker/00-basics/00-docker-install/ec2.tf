@@ -2,23 +2,6 @@ resource "aws_instance" "my_instance" {
   ami                    = data.aws_ami.custom_ami.id
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.allow_all.id]
-  # provisioner "remote-exec" {
-  #   connection {
-  #     type     = "ssh"
-  #     user     = "ec2-user"
-  #     password = "DevOps321"
-  #     host     = self.public_ip
-  #   }
-
-  #   inline = [
-  #     "sudo dnf -y install dnf-plugins-core",
-  #     "sudo dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo",
-  #     "sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin",
-  #     "sudo systemctl start docker",
-  #     "sudo systemctl enable docker",
-  #     "sudo usermod -aG docker ec2-user"
-  #   ]
-  # }
 
   tags = merge( # to merge maps
     var.common_tags,
@@ -51,11 +34,11 @@ resource "terraform_data" "main" {
   }
 }
 
-resource "aws_ec2_instance_state" "main" {
-  instance_id = aws_instance.my_instance.id
-  depends_on  = [terraform_data.main]
-  state       = "running"
-}
+# resource "aws_ec2_instance_state" "main" {
+#   instance_id = aws_instance.my_instance.id
+#   depends_on  = [terraform_data.main]
+#   state       = "running" #stopped/running
+# }
 
 
 resource "aws_security_group" "allow_all" {

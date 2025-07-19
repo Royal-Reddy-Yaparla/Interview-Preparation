@@ -13,4 +13,4 @@ WORKDIR /ecommerce_application
 RUN pwd
 
 # maintain container in active time of check 
-RUN sleep 1000s
+CMD ["sleep" "1000"]

@@ -1,0 +1,15 @@
+ARG defines a build-time variable.
+
+It is available only during image build — not accessible at runtime (inside a running container).
+
+It can be passed during build using --build-arg.
+ARG can be used before FROM (to allow dynamic base image versions), which is a special use case.
+-------------------------------------------------
+ENV defines an environment variable that is available:
+
+During build time (after it’s declared)
+
+And also at runtime (inside the container)
+
+-------------------------------------------------
+```docker build -t arg:v1 --no-trunc --progress=plain --build-arg version=9 .```
