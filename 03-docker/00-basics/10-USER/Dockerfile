@@ -6,7 +6,7 @@ RUN dnf install nginx -y
 RUN rm -rf /usr/share/nginx/html/*
 
 # adding file for nginx repo
-COPY index.html /usr/share/nginx/html
+COPY index.html /usr/share/nginx/html/
 
 # add user to avoid root level access to container
 USER ecommerce
