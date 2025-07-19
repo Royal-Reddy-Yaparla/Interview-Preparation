@@ -1,13 +1,13 @@
 FROM almalinux:latest
 
 # create directory for application 
-RUN mkdir ecommerce_application
+RUN mkdir /tmp/ecommerce_application
 
 # check present directory
 RUN pwd 
 
 # move to ecommerce_application repo 
-WORKDIR /ecommerce_application
+WORKDIR /tmp/ecommerce_application
 
 # check present directory
 RUN pwd
