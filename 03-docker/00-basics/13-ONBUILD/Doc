@@ -1,0 +1,3 @@
+The ONBUILD instruction sets up a trigger — a command that will execute later, but not during the build of the current image.
+
+Instead, the trigger runs when another Dockerfile uses this image as a base image (via FROM).
