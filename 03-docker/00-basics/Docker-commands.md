@@ -68,3 +68,7 @@ docker exec -it ea760ff43733 bash
 ```
 docker ps -a --no-trunc --progress=plain
 ```
+
+```
+docker build -t arg:v1 --no-trunc --progress=plain --build-arg version=9 .
+```
