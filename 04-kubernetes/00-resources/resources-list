@@ -1,0 +1,6 @@
+1. namespace
+    - ```kubectl api-resources``` 
+    - default namespaces are admin level namespaces
+
+2. pod
+3. 

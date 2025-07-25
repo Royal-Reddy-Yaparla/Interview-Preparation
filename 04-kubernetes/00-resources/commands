@@ -1,0 +1,8 @@
+kubectl apply -f <resoucefile>
+kubectl delete -f <resoucefile>
+
+kubectl get namespaces 
+kubectl get nodes 
+
+kubectl logs <pod_name>
+
