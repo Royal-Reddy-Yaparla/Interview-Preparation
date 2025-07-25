@@ -3,6 +3,12 @@
     docker build -t <name>:tag .
 
 ```
+
+- build an image freshly 
+```
+    docker build -t <name>:tag --no-cache .
+
+```
 Note: execute command where Dockerfile is present.
 
 - inspect image/container

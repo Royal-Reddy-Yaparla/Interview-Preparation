@@ -5,7 +5,6 @@ FROM almalinux:latest
 LABEL maintainer="royal@gmail.com"
 LABEL version="v1.0.0"
 LABEL description="frontend-component nginx-image"
-LABEL description="frontend-component nginx-image"
 LABEL github_resource="https://github.com/practice"
 # LABEL github_commit="${GIT_COMMIT}"
 # LABEL build_date="${BUILD_DATE}"
