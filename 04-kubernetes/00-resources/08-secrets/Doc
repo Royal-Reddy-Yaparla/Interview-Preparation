@@ -1,8 +1,5 @@
-In Kubernetes, we can pass environment variables to containers in a Pod using the env field. 
-- Static values
-- Values from ConfigMaps or Secrets
-
-
+A Secret in Kubernetes is an object used to store sensitive data, such as passwords, tokens, SSH keys, or TLS certificates.
+This data is base64-encoded to avoid accidental exposure, but not encrypted by default.
 
 ```
     kubectl apply -f secrets.yaml
@@ -19,8 +16,4 @@ In Kubernetes, we can pass environment variables to containers in a Pod using th
 
     echo -n "YWRtaW4=" | base64  --decode
     admin
-
-
-
-
 ```
