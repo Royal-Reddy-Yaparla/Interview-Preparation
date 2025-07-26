@@ -5,7 +5,7 @@ metadata:
   name: ecom-app
   region: us-east-1
 managedNodeGroups:
-  - name: ecom-app-node
+  - name: node # just name don't include cluster name
     instanceTypes: ["t3.large","c3.large","c4.large","c5.large"]
     minSize: 2
     desiredCapacity: 2

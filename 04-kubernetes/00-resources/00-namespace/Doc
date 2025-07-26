@@ -1,0 +1,21 @@
+A Kubernetes namespace provides a logical partition within a physical Kubernetes cluster.
+It allows to create isolated environments for resources such as pods, services, and deployments.
+Namespaces are especially useful for 
+- organizing resources in large clusters
+- managing access control
+- enabling multi-tenancy.Multi-tenancy means multiple teams, departments, or clients sharing the same Kubernetes cluster, while keeping their environments isolated. 
+
+```
+    <!-- create namespace -->
+    kubectl apply -f namespace.yaml
+
+    <!-- delete namespace -->
+    kubectl delete -f namespace.yaml
+
+    <!-- get namespaces list  -->
+    kubectl get namespaces
+
+    <!-- get resource from specific namespace -->
+    kubectl get all --namespace=ecom
+
+```
