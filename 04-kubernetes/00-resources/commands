@@ -6,3 +6,19 @@ kubectl get nodes
 
 kubectl logs <pod_name>
 
+kubectl exec -it <pod_name> -- bash 
+kubectl exec -it <pod_name> multi-container -c <pod_name>-- bash  
+
+<!-- to know resources utilization  -->
+kubectl top pods
+
+# encode
+echo -n "admin" | base64
+echo -n "admin123" | base64
+
+# decode
+echo -n "<encrypt>" | base64 --decode
+
+kubectl describe <resource_name>
+
+kubectl rollout status deployment /<deployment_name>
