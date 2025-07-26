@@ -1,0 +1,13 @@
+-pod contains one or more containers , that shares same resource (storage, network resources, namespaces) with in pod. multi-containers are used for 
+
+- sidecar : one is main container ,for serve (like nginx frontend) , another one for secondary process , moving logs to elastic-search
+- proxy : reaching traffic not direct to container , there is container , passes request to application pod.
+
+```
+    kubectl apply -f <pod.yaml>
+
+    kubectl get pods
+
+    kubectl exec -it <pod_name> multi-container -c <pod_name>-- bash  
+
+```

@@ -1,0 +1,14 @@
+- pods are k8 objects that are basic unit for running containers inside k8 cluster.pod contains one or more containers
+that shares same resource (storage, network resources, namespaces) with in pod.pods are ephemeral resources , that pods can be terminated and restart on another in k8 cluster at any point of time.  
+
+```
+    kubectl apply -f <pod.yaml>
+
+    kubectl get pods
+
+    <!-- full info of pod -->
+    kubectl describe pod 
+
+    kubectl delete pod <pod_name>
+
+```

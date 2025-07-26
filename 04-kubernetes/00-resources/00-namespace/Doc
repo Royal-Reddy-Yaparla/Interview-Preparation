@@ -16,6 +16,12 @@ Namespaces are especially useful for
     kubectl get namespaces
 
     <!-- get resource from specific namespace -->
-    kubectl get all --namespace=ecom
+    kubectl get all --namespace <namespace_name>
+
+    <!-- create namespace by command -->
+    kubectl create namespace <namespace_name>
+    
+    <!-- delete namespace by command -->
+    kubectl delete namespace <namespace_name>
 
 ```
