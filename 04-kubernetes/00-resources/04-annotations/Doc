@@ -1,0 +1,1 @@
+- Annotations are key-value pairs used to attach non-identifying metadata to Kubernetes resources. Unlike labels, annotations are not used for selection and can hold larger, more descriptive values. They are useful for tools and systems external to Kubernetes.

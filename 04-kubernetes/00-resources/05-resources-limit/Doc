@@ -1,0 +1,13 @@
+In Kubernetes, by default, a pod has no resource limits, meaning it can use as much CPU and memory as available on the node — potentially affecting other pods.
+
+To control this, we can define resource requests and limits in the pod's spec:
+
+Requests act as a soft guarantee — the scheduler uses these values to decide where to place the pod.
+
+Limits are hard caps — the pod cannot use more than the specified CPU or memory.
+
+to check resources utilization pods
+```
+    kubectl top pods
+
+```

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: nginx 
+  labels:
+    component: frontend
+    environment: dev
+spec:
+  containers:
+    - name: nginx 
+      image: nginx # latest will be taken by default
+      resources: 
+        requests: # soft limit
+          memory: "64Mi"
+          cpu: "250m"
+        limits:   # hard limit
+          memory: "128Mi"
+          cpu: "500m"

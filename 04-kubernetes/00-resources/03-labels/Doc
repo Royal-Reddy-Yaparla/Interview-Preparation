@@ -1,0 +1,4 @@
+- Labels are key-value pairs attached to Kubernetes resources. They are used to organize, categorize, and select resources, especially when using selectors in deployments, services, and other controllers.
+only able to select inside kubernetes resources 
+
+
