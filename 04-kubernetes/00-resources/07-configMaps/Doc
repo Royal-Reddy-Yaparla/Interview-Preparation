@@ -1,0 +1,10 @@
+- Store environment-specific or app-specific configuration values outside the container image, so you don’t need to rebuild images for every config change.
+- Bulk Injecting Environment Variables
+- Mounting Config Files into Pods
+
+
+
+```
+    kubectl apply -f configmap.yaml
+    kubectl apply -f pod.yaml
+```

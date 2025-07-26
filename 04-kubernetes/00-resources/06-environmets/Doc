@@ -1,0 +1,3 @@
+In Kubernetes, we can pass environment variables to containers in a Pod using the env field. 
+- Static values
+- Values from ConfigMaps or Secrets

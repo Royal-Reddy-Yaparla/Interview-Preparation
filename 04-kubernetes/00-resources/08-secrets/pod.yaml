@@ -9,5 +9,6 @@ spec:
   containers:
     - name: nginx 
       image: nginx # latest will be taken by default
-      ports:
-        - containerPort: 80
+      envFrom:
+        - secretRef:
+            name: mySecrets

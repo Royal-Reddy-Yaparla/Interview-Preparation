@@ -1,0 +1,26 @@
+In Kubernetes, we can pass environment variables to containers in a Pod using the env field. 
+- Static values
+- Values from ConfigMaps or Secrets
+
+
+
+```
+    kubectl apply -f secrets.yaml
+    kubectl apply -f pod.yaml
+
+    echo -n "admin" | base64
+    YWRtaW4=
+
+    echo -n "Admin123" | base64
+    QWRtaW4xMjM=
+
+    echo -n "QWRtaW4xMjM=" | base64  --decode
+    Admin123
+
+    echo -n "YWRtaW4=" | base64  --decode
+    admin
+
+
+
+
+```

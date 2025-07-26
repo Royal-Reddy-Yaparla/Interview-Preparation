@@ -9,5 +9,8 @@ spec:
   containers:
     - name: nginx 
       image: nginx # latest will be taken by default
-      ports:
-        - containerPort: 80
+      env: 
+        - name: CATALOGUE_HOST
+          value: "catalogue.royalreddy.site"
+        - name: USER_HOST
+          value: "user.royalreddy.site"
