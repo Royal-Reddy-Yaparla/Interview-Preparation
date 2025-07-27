@@ -1,0 +1,23 @@
+apiVersion: v1 
+kind: ReplicaSet 
+metadata:
+  name: nginx-replicaset
+  labels:
+    name: nginx-replicaset
+    project: ecom
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      name: nginx-pod # pod template
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        name: nginx-pod
+        tier: frontend
+    spec:
+    containers:
+      - name: nginx
+        image: nginx # latest will be taken by default
+

@@ -1,0 +1,5 @@
+A ReplicaSet creates and manages multiple identical Pods using a Pod template defined in its spec. It ensures the desired number of pod replicas are always running.
+
+```
+    kubectl apply -f pod.yaml
+```

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfigmap
+data:
+  CATALOGUE_HOST: catalogue.royalreddy.site
+  USER_HOST: user.royalreddy.site
+  CART_HOST: cart.royalreddy.site
+  SHIPPING_HOST: shipping.royalreddy.site
+  PAYMENT_HOST: payment.royalreddy.site
+  

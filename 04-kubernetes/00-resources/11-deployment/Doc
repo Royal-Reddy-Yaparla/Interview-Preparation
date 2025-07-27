@@ -1,0 +1,9 @@
+A Deployment in Kubernetes manages ReplicaSets and Pods and provides declarative updates for Pods and ReplicaSets. It supports rolling updates and rollbacks, ensuring zero-downtime deployments and easy recovery from failures.
+
+
+
+
+```
+    kubectl apply -f pod.yaml
+    kubectl rollout status deployment /<deployment_name>
+```
