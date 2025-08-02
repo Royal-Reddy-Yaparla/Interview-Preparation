@@ -8,6 +8,6 @@
 
     kubectl get pods
 
-    kubectl exec -it <pod_name> multi-container -c <pod_name>-- bash  
+    kubectl exec -it <pod_name> multi-container -c <pod_name> -- bash  
 
 ```

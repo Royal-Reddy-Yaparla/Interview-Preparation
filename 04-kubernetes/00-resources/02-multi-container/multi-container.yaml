@@ -12,7 +12,8 @@ metadata:
 spec:
   containers:
     - name: nginx 
+      containerName: 
       image: nginx # latest will be taken by default
     - name: almalinux
       image: almalinux
-      command: ["sleep","200"]
+      command: ["sleep","200"] # pass commands
