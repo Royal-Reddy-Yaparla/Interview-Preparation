@@ -1,5 +1,5 @@
 ```
 kubectl apply -f pod.yaml
-kubectl apply -f nodePort.yaml
 
 ```
+Note: enable node port which is given in service 
