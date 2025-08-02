@@ -8,3 +8,4 @@ data:
   CART_HOST: cart.royalreddy.site
   SHIPPING_HOST: shipping.royalreddy.site
   PAYMENT_HOST: payment.royalreddy.site
+  DISPATCH: dispatch.royalreddy.site
