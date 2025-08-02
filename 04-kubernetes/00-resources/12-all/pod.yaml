@@ -59,7 +59,8 @@ spec:
             - secretRef:
                 name: mysecrets  
             - configMapRef:
-              name: myconfigmap
+                name: myconfigmap
+
 ---
 apiVersion: v1
 kind: Service
