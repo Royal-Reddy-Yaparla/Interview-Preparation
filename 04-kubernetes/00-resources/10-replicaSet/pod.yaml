@@ -19,4 +19,18 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:perl # latest will be taken by default
+          image: nginx # latest will be taken by default
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  type: LoadBalancer
+  selector:
+    name: nginx-pod
+    tier: frontend
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80 #service-por
