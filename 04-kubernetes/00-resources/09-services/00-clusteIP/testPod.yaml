@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: nginx 
+  labels:
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/instance: ecom-nginx
+    app.kubernetes.io/version: "1.33"     # Example version
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/part-of: ecom-app
+    app.kubernetes.io/environment: dev
+spec:
+  containers:
+    - name: almalinux
+      image: almalinux
+      command: ["sleep","200"] # pass commands
