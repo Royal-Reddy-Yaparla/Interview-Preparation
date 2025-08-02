@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfigmap
+data:
+  CATALOGUE_HOST: catalogue.royalreddy.site
+  USER_HOST: user.royalreddy.site
+  CART_HOST: cart.royalreddy.site
+  SHIPPING_HOST: shipping.royalreddy.site
+  PAYMENT_HOST: payment.royalreddy.site
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mySecrets
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: QWRtaW4xMjM=
+---
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: nginx-deployment 
+  labels:
+    name: nginx-deployment
+    project: ecom 
+  annotations:
+    description: "This pod runs for testing dev-stage"
+    git_url: "https://github-testing.com"
+    running_port: "80"
+    maintainer: "royal@example.com"
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels:
+      name: nginx-pod # pod template
+      app: frontend
+  template:
+    metadata:
+      labels:
+        name: nginx-pod
+        app: frontend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx # latest will be taken by default
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "300m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          ports:
+              - containerPort: 80
+          env: 
+            - name: ENVIRONMENT
+              value: "dev" 
+          envFrom:
+            - secretRef:
+                name: mySecrets  
+            - configMapRef:
+              name: myconfigmap
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  type: LoadBalancer
+  selector:
+    name: nginx-pod
+    app: frontend
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80 #service-por
