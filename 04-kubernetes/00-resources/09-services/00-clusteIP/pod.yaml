@@ -18,3 +18,4 @@ spec:
         cpu: "500m"
     ports:
       - containerPort: 80
+        targetPort: 80
