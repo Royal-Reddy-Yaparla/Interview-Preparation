@@ -11,4 +11,4 @@ spec:
       image: nginx # latest will be taken by default
       envFrom:
         - secretRef:
-            name: mySecrets
+            name: pod-secrets

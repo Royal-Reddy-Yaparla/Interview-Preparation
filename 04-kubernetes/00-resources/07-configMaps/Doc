@@ -2,6 +2,7 @@
 - Bulk Injecting Environment Variables
 - Mounting Config Files into Pods
 
+once configMaps values are updated, need restart the pod , otherwise value won't in pod
 
 
 ```
