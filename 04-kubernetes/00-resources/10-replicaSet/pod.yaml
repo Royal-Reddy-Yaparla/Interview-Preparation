@@ -1,9 +1,9 @@
 apiVersion: v1 
 kind: ReplicaSet 
 metadata:
-  name: nginx-replicaset
+  name: nginx
   labels:
-    name: nginx-replicaset
+    name: nginx
     project: ecom
 spec:
   replicas: 3
