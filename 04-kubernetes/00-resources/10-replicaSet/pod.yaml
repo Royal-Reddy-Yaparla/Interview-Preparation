@@ -17,7 +17,6 @@ spec:
         name: nginx-pod
         tier: frontend
     spec:
-    containers:
-      - name: nginx
-        image: nginx # latest will be taken by default
-
+      containers:
+        - name: nginx
+          image: nginx # latest will be taken by default
