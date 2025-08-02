@@ -9,12 +9,12 @@ spec:
   replicas: 3
   selector: 
     matchLabels:
-      name: nginx-pod # pod template
+      name: nginx # pod template
       tier: frontend
   template:
     metadata:
       labels:
-        name: nginx-pod
+        name: nginx
         tier: frontend
     spec:
       containers:
@@ -28,7 +28,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    name: nginx-pod
+    name: nginx
     tier: frontend
   ports:
   - protocol: TCP
