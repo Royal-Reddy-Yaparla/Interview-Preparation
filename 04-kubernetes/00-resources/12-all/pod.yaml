@@ -12,7 +12,7 @@ data:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: mySecrets
+  name: mysecrets
 type: Opaque
 data:
   username: YWRtaW4=
@@ -59,7 +59,7 @@ spec:
               value: "dev" 
           envFrom:
             - secretRef:
-                name: mySecrets  
+                name: mysecrets  
             - configMapRef:
               name: myconfigmap
 ---
