@@ -19,4 +19,4 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx # latest will be taken by default
+          image: nginx:perl # latest will be taken by default
