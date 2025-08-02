@@ -24,4 +24,6 @@ Namespaces are especially useful for
     <!-- delete namespace by command -->
     kubectl delete namespace <namespace_name>
 
+    <!-- set the default namespace for kubectl -->
+    kubectl config set-context --current --namespace=ecom
 ```

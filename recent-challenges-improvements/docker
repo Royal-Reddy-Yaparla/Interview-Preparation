@@ -1,5 +1,7 @@
-mutli-stage build usually for java component
+mutli-stage build usually for java component also implement to nodejs an others 
+no need to explain bookish multi-stage defination , explain in usecase
 
+avoiding ```npm install```, ```maven install```
 
 but i have implemented also , nodejs components also , reduce images size 
 - 100mb+ 

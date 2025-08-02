@@ -15,3 +15,4 @@ spec:
       image: nginx # latest will be taken by default
     - name: almalinux
       image: almalinux
+      command: ["sleep","200"]

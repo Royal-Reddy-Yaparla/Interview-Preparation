@@ -18,10 +18,13 @@ Note: execute command where Dockerfile is present.
 
 ```
 
-remove rmi 
+remove images
 
 ```
-docker rm <image_id>
+docker rmi <image_id>
+
+remove all images
+docker rmi `docker images -a -q`
 
 ```
 
