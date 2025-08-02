@@ -1,4 +1,17 @@
 apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    name: nginx-pod
+    app: frontend
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80 #container-port
+---
+apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod
@@ -16,16 +29,3 @@ spec:
       limits:
         memory: "1024Mi"
         cpu: "500m"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend-service
-spec:
-  selector:
-    name: nginx-pod
-    app: frontend
-  ports:
-  - protocol: TCP
-    port: 80 #service-port
-    targetPort: 80 #container-port
