@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment 
 metadata:
-  name: Deployment 
+  name: nginx-deployment 
   labels:
     name: nginx
     project: ecom 
